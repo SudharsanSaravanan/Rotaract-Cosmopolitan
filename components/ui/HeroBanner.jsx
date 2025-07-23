@@ -109,7 +109,7 @@ const HeroBanner = () => {
       {/* 🔄 Extra Spinning Logo Bottom Right */}
       <div className="absolute bottom-13 md:bottom-8 right-7 md:right-10 z-20 animate-spin-slow">
         <img
-          src="/logo/gold-rot-logo.png"
+          src="/logo/white-wheel-logo.png"
           alt="spin 2"
           className="w-10 aspect-square object-contain opacity-60 hover:opacity-90 transition duration-500"
         />
