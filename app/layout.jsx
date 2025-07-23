@@ -9,8 +9,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <title>WebCraft - Professional Website Development</title>
-        <meta name="description" content="We create stunning, professional websites that help businesses grow and succeed in the digital world." />
+        <title>Cosmopolitans - Coimbatore</title>
+        <meta name="description" content="" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

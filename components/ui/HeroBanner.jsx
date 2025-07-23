@@ -8,27 +8,24 @@ const HeroBanner = () => {
   const slides = [
     {
       id: 1,
-      title: "Build Your Dream",
-      subtitle: "Website",
-      description: "We create stunning, professional websites that help your business grow and succeed in the digital world.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80",
-      cta: "Start Your Project"
+      title: "Empower",
+      subtitle: "Communities",
+      description: "Join us in creating impactful change through service, leadership, and fellowship in Coimbatore and beyond.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80"
     },
     {
       id: 2,
-      title: "Modern Web",
-      subtitle: "Solutions",
-      description: "Cutting-edge technology meets beautiful design to create exceptional digital experiences for your customers.",
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80",
-      cta: "Explore Services"
+      title: "Inspire",
+      subtitle: "Change",
+      description: "Rotaract Club of Coimbatore Cosmopolitan drives positive impact through community service and youth leadership.",
+      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80"
     },
     {
       id: 3,
-      title: "Transform Your",
-      subtitle: "Business",
-      description: "From concept to launch, we deliver comprehensive web solutions that drive results and exceed expectations.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80",
-      cta: "Get Quote"
+      title: "Connect &",
+      subtitle: "Grow",
+      description: "Be part of a vibrant community dedicated to service above self, fostering personal and professional growth.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80"
     }
   ]
 
@@ -42,7 +39,7 @@ const HeroBanner = () => {
   }, [slides.length])
 
   return (
-    <section className="relative h-[13cm] md:h-[14cm] lg:h-[16cm] overflow-hidden">
+    <section className="relative h-screen md:h-screen sm:h-[50vh] overflow-hidden">
       {/* Background slides */}
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
@@ -58,76 +55,64 @@ const HeroBanner = () => {
                 backgroundImage: `url(${slide.image})`,
               }}
             />
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-teal-900/80 via-teal-800/70 to-teal-700/80" />
+            {/* Gradient Overlay with White to Deep Blue Fade */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-[#1E3A8A]/70" />
+            {/* Semi-transparent overlay for text readability */}
+            <div className="absolute inset-0 bg-black/40" />
           </div>
         ))}
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center pt-10">
+      <div className="relative z-10 h-full flex items-center pt-10 sm:pt-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="text-left text-white max-w-2xl">
+          <div className="text-left text-white max-w-3xl">
             {/* Animated content */}
-            <div className="space-y-4 animate-fade-in">
-              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight">
-                <span className="block opacity-0 animate-slide-up-1">
+            <div className="space-y-2 sm:space-y-3 animate-fade-in">
+              <h1 className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-serif font-bold leading-tight tracking-tight">
+                <span className="block opacity-0 animate-slide-left-1">
                   {slides[currentSlide].title}
                 </span>
-                <span className="block text-teal-300 bg-gradient-to-r from-teal-300 to-teal-400 bg-clip-text text-transparent opacity-0 animate-slide-up-2">
+                <span className="block text-white bg-gradient-to-r from-white to-[#1E3A8A] bg-clip-text text-transparent opacity-0 animate-slide-left-2">
                   {slides[currentSlide].subtitle}
                 </span>
               </h1>
               
-              <p className="text-sm sm:text-base lg:text-lg leading-relaxed font-light opacity-90 opacity-0 animate-slide-up-3">
-                {slides[currentSlide].description}
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg font-serif font-bold leading-relaxed opacity-90 opacity-0 animate-slide-left-3">
+                <span className="bg-gradient-to-r from-white to-[#eab308] bg-clip-text text-transparent">
+                  {slides[currentSlide].description}
+                </span>
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 pt-3 opacity-0 animate-slide-up-4">
-                <Link 
-                  href="/contact" 
-                  className="group bg-gradient-to-r from-teal-400 to-teal-500 text-white px-6 py-3 rounded-lg font-bold text-sm hover:from-teal-300 hover:to-teal-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-                >
-                  <span className="flex items-center">
-                    {slides[currentSlide].cta}
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </span>
-                </Link>
-                
-                <Link 
-                  href="/works" 
-                  className="group border-2 border-teal-300 text-teal-300 px-6 py-3 rounded-lg font-bold text-sm hover:bg-teal-300 hover:text-white transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
-                >
-                  <span className="flex items-center">
-                    View Our Work
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                  </span>
-                </Link>
-              </div>
+              {/* Club Branding */}
+              <p className="text-xs sm:text-sm font-serif text-white opacity-90 opacity-0 animate-slide-left-4 mt-2">
+                Rotaract Club of Coimbatore Cosmopolitan | Group 5 | RID 3206
+              </p>
             </div>
           </div>
         </div>
       </div>
 
       <style jsx>{`
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+        .font-serif {
+          font-family: 'Merriweather', serif;
+        }
+
         @keyframes fade-in {
           from { opacity: 0; }
           to { opacity: 1; }
         }
         
-        @keyframes slide-up {
+        @keyframes slide-left {
           from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateX(-100%);
           }
           to {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(0);
           }
         }
         
@@ -135,20 +120,32 @@ const HeroBanner = () => {
           animation: fade-in 1s ease-out;
         }
         
-        .animate-slide-up-1 {
-          animation: slide-up 0.8s ease-out 0.2s forwards;
+        .animate-slide-left-1 {
+          animation: slide-left 0.8s ease-out 0.2s forwards;
         }
         
-        .animate-slide-up-2 {
-          animation: slide-up 0.8s ease-out 0.4s forwards;
+        .animate-slide-left-2 {
+          animation: slide-left 0.8s ease-out 0.4s forwards;
         }
         
-        .animate-slide-up-3 {
-          animation: slide-up 0.8s ease-out 0.6s forwards;
+        .animate-slide-left-3 {
+          animation: slide-left 0.8s ease-out 0.6s forwards;
         }
         
-        .animate-slide-up-4 {
-          animation: slide-up 0.8s ease-out 0.8s forwards;
+        .animate-slide-left-4 {
+          animation: slide-left 0.8s ease-out 0.8s forwards;
+        }
+
+        @media (max-width: 640px) {
+          .h-[50vh] {
+            min-height: 50vh;
+          }
+          .pt-6 {
+            padding-top: 1rem;
+          }
+          .space-y-3 {
+            space-y-2;
+          }
         }
       `}</style>
     </section>

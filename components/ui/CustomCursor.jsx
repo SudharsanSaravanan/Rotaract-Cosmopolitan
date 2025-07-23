@@ -48,7 +48,7 @@ const CustomCursor = () => {
 
   return (
     <div
-      className={`fixed pointer-events-none z-50 w-3 h-3 sm:w-3.5 sm:h-3.5 bg-teal-500 rounded-full transition-opacity duration-300 ease-out ${
+      className={`fixed pointer-events-none z-50 w-3 h-3 sm:w-3.5 sm:h-3.5 bg-[#1E3A8A] rounded-full transition-opacity duration-300 ease-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       style={{
