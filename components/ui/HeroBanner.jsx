@@ -84,7 +84,7 @@ const HeroBanner = () => {
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${slide.image})` }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-[#000d6f]/80" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-[#005f60]/30" />
             <div className="absolute inset-0 bg-black/40" />
           </div>
         ))}

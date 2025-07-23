@@ -1,38 +1,43 @@
-"use client"
-import Layout from '@/components/ui/Layout'
-import HeroBanner from '@/components/ui/HeroBanner'
-import Link from 'next/link'
-import { useEffect, useRef } from 'react'
-import { CountUp } from 'countup.js'
+"use client";
+
+import Layout from "@/components/ui/Layout";
+import HeroBanner from "@/components/ui/HeroBanner";
+import InnovationBanner from "@/components/ui/InnovationBanner"; // Import the new component
+import Link from "next/link";
+import { useEffect, useRef } from "react";
+import { CountUp } from "countup.js";
 
 export default function Home() {
   const countUpRefs = {
     projects: useRef(null),
     satisfaction: useRef(null),
     experience: useRef(null),
-  }
+  };
 
   useEffect(() => {
     const options = {
       duration: 2.5,
-      separator: ',',
+      separator: ",",
       enableScrollSpy: true,
       scrollSpyOnce: true,
-    }
+    };
 
-    const projectsCounter = new CountUp(countUpRefs.projects.current, 24, options)
-    const satisfactionCounter = new CountUp(countUpRefs.satisfaction.current, 98, { ...options, suffix: '%' })
-    const experienceCounter = new CountUp(countUpRefs.experience.current, 2, { ...options, suffix: '+' })
+    const projectsCounter = new CountUp(countUpRefs.projects.current, 24, options);
+    const satisfactionCounter = new CountUp(countUpRefs.satisfaction.current, 98, { ...options, suffix: "%" });
+    const experienceCounter = new CountUp(countUpRefs.experience.current, 2, { ...options, suffix: "+" });
 
-    if (!projectsCounter.error) projectsCounter.start()
-    if (!satisfactionCounter.error) satisfactionCounter.start()
-    if (!experienceCounter.error) experienceCounter.start()
-  }, [])
+    if (!projectsCounter.error) projectsCounter.start();
+    if (!satisfactionCounter.error) satisfactionCounter.start();
+    if (!experienceCounter.error) experienceCounter.start();
+  }, []);
 
   return (
     <Layout>
       {/* Hero Banner Component */}
       <HeroBanner />
+
+      {/* Innovation Banner Component */}
+      <InnovationBanner />
 
       {/* Services Section */}
       <section className="py-24 bg-gradient-to-br from-teal-50 via-white to-teal-100 relative overflow-hidden">
@@ -329,5 +334,5 @@ export default function Home() {
         </div>
       </section>
     </Layout>
-  )
+  );
 }
