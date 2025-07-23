@@ -1,46 +1,77 @@
 'use client'
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import { useState, useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
 
 const HeroBanner = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const textRef = useRef(null)
+
+  const leftLogoRef = useRef(null)
+  const rightLogoRef = useRef(null)
+  const orbRef = useRef(null)
 
   const slides = [
     {
       id: 1,
-      title: "Empower",
-      subtitle: "Communities",
-      description: "Join us in creating impactful change through service, leadership, and fellowship in Coimbatore and beyond.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80"
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80",
+      caption: "Serving smiles through community outreach and education."
     },
     {
       id: 2,
-      title: "Inspire",
-      subtitle: "Change",
-      description: "Rotaract Club of Coimbatore Cosmopolitan drives positive impact through community service and youth leadership.",
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80"
+      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80",
+      caption: "Empowering youth leadership and building strong futures."
     },
     {
       id: 3,
-      title: "Connect &",
-      subtitle: "Grow",
-      description: "Be part of a vibrant community dedicated to service above self, fostering personal and professional growth.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80"
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80",
+      caption: "Creating sustainable impact through unity and service."
     }
   ]
 
-  // Auto-advance slides
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
     }, 5000)
-
     return () => clearInterval(timer)
-  }, [slides.length])
+  }, [])
+
+  useEffect(() => {
+    if (textRef.current) {
+      gsap.fromTo(
+        textRef.current,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }
+      )
+    }
+  }, [currentSlide])
+
+  // GSAP Rotation Effects
+  useEffect(() => {
+    gsap.to(leftLogoRef.current, {
+      rotation: 360,
+      duration: 10,
+      repeat: -1,
+      ease: "linear",
+    })
+
+    gsap.to(rightLogoRef.current, {
+      rotation: -360,
+      duration: 15,
+      repeat: -1,
+      ease: "linear",
+    })
+
+    gsap.to(orbRef.current, {
+      rotation: 360,
+      duration: 30,
+      repeat: -1,
+      ease: "linear",
+    })
+  }, [])
 
   return (
-    <section className="relative h-screen md:h-screen sm:h-[50vh] overflow-hidden">
-      {/* Background slides */}
+    <section className="relative h-screen overflow-hidden">
+      {/* Background Slides */}
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
           <div
@@ -51,103 +82,44 @@ const HeroBanner = () => {
           >
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{
-                backgroundImage: `url(${slide.image})`,
-              }}
+              style={{ backgroundImage: `url(${slide.image})` }}
             />
-            {/* Gradient Overlay with White to Deep Blue Fade */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-[#1E3A8A]/70" />
-            {/* Semi-transparent overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-[#000d6f]/80" />
             <div className="absolute inset-0 bg-black/40" />
           </div>
         ))}
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 h-full flex items-center pt-10 sm:pt-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="text-left text-white max-w-3xl">
-            {/* Animated content */}
-            <div className="space-y-2 sm:space-y-3 animate-fade-in">
-              <h1 className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-serif font-bold leading-tight tracking-tight">
-                <span className="block opacity-0 animate-slide-left-1">
-                  {slides[currentSlide].title}
-                </span>
-                <span className="block text-white bg-gradient-to-r from-white to-[#1E3A8A] bg-clip-text text-transparent opacity-0 animate-slide-left-2">
-                  {slides[currentSlide].subtitle}
-                </span>
-              </h1>
-              
-              <p className="text-xs sm:text-sm md:text-base lg:text-lg font-serif font-bold leading-relaxed opacity-90 opacity-0 animate-slide-left-3">
-                <span className="bg-gradient-to-r from-white to-[#eab308] bg-clip-text text-transparent">
-                  {slides[currentSlide].description}
-                </span>
-              </p>
-              
-              {/* Club Branding */}
-              <p className="text-xs sm:text-sm font-serif text-white opacity-90 opacity-0 animate-slide-left-4 mt-2">
-                Rotaract Club of Coimbatore Cosmopolitan | Group 5 | RID 3206
-              </p>
-            </div>
-          </div>
+      {/* Main Heading & Caption */}
+      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 pt-20">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#efebe9] drop-shadow-lg">
+          Rotaract Club of Coimbatore Cosmopolitan
+        </h1>
+        <p className="text-lg sm:text-xl font-medium mt-2 text-[#d7ccc8]">
+          Group 5 | Rotary International District 3206
+        </p>
+
+        <div ref={textRef} className="mt-8 max-w-2xl">
+          <p className="text-white text-base sm:text-lg font-serif italic">
+            {slides[currentSlide].caption}
+          </p>
         </div>
       </div>
 
-      <style jsx>{`
-        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+      {/* 🔄 Extra Spinning Logo Bottom Right */}
+      <div className="absolute bottom-13 md:bottom-8 right-7 md:right-10 z-20 animate-spin-slow">
+        <img
+          src="/logo/gold-rot-logo.png"
+          alt="spin 2"
+          className="w-10 aspect-square object-contain opacity-60 hover:opacity-90 transition duration-500"
+        />
+      </div>
 
-        .font-serif {
-          font-family: 'Merriweather', serif;
-        }
 
-        @keyframes fade-in {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        
-        @keyframes slide-left {
-          from {
-            opacity: 0;
-            transform: translateX(-100%);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        
-        .animate-fade-in {
-          animation: fade-in 1s ease-out;
-        }
-        
-        .animate-slide-left-1 {
-          animation: slide-left 0.8s ease-out 0.2s forwards;
-        }
-        
-        .animate-slide-left-2 {
-          animation: slide-left 0.8s ease-out 0.4s forwards;
-        }
-        
-        .animate-slide-left-3 {
-          animation: slide-left 0.8s ease-out 0.6s forwards;
-        }
-        
-        .animate-slide-left-4 {
-          animation: slide-left 0.8s ease-out 0.8s forwards;
-        }
-
-        @media (max-width: 640px) {
-          .h-[50vh] {
-            min-height: 50vh;
-          }
-          .pt-6 {
-            padding-top: 1rem;
-          }
-          .space-y-3 {
-            space-y-2;
-          }
-        }
-      `}</style>
+      {/* 🌟 Floating Glowing Orb (spinning via GSAP) */}
+      <div className="absolute top-32 right-24 z-10" ref={orbRef}>
+        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#fff3e0] to-[#6d4c41] blur-2xl opacity-25" />
+      </div>
     </section>
   )
 }
