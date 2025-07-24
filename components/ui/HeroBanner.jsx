@@ -70,7 +70,7 @@ const HeroBanner = () => {
   }, [])
 
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-[75vh] md:h-screen overflow-hidden">
       {/* Background Slides */}
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
@@ -91,27 +91,72 @@ const HeroBanner = () => {
       </div>
 
       {/* Main Heading & Caption */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 pt-20">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#efebe9] drop-shadow-lg">
-          Rotaract Club of Coimbatore Cosmopolitan
-        </h1>
-        <p className="text-lg sm:text-xl font-medium mt-2 text-[#d7ccc8]">
-          Group 5 | Rotary International District 3206
-        </p>
+      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4" style={{ paddingTop: 'calc(30vh - 100px)' }}>
+        {/* Minimal Welcome */}
+        <div className="mb-2 md:mb-3">
+          <p className="text-white/80 text-sm md:text-base font-light tracking-[0.15em] uppercase" style={{ fontFamily: 'var(--font-cantata)' }}>
+            Welcome to
+          </p>
+          <div className="w-12 h-px bg-white/40 mx-auto mt-1"></div>
+        </div>
 
-        <div ref={textRef} className="mt-8 max-w-2xl">
-          <p className="text-white text-base sm:text-lg font-serif italic">
+        {/* Rotaract Club Of Coimbatore */}
+        <div className="mb-1 md:mb-0">
+          <p className="text-cyan-100 text-base md:text-2xl lg:text-3xl font-light tracking-[0.2em] uppercase opacity-95" style={{ fontFamily: 'var(--font-aldrich)' }}>
+            ROTARACT CLUB OF COIMBATORE
+          </p>
+        </div>
+
+        {/* Main Title - COSMOPOLITAN */}
+        <h1 className="text-white text-[40px] sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-[0.05em] uppercase leading-tight mb-2 md:mb-4 drop-shadow-2xl" style={{ fontFamily: 'var(--font-aldrich)' }}>
+          COSMOPOLITAN
+        </h1>
+
+        {/* Clean Info Row */}
+        <div className="flex items-center justify-center gap-4 md:gap-6 mb-2 md:mb-4">
+          <div className="flex items-center gap-2">
+            <div className="w-1 h-1 bg-white rounded-full"></div>
+            <p className="text-white/90 text-sm font-light tracking-wide" style={{ fontFamily: 'var(--font-cantata)' }}>
+              Group 5
+            </p>
+          </div>
+          
+          <div className="w-px h-4 bg-white/30"></div>
+          
+          <div className="flex items-center gap-2">
+            <div className="w-1 h-1 bg-white rounded-full"></div>
+            <p className="text-white/90 text-sm font-light tracking-wide" style={{ fontFamily: 'var(--font-cantata)' }}>
+              District 3206
+            </p>
+          </div>
+          
+          <div className="w-px h-4 bg-white/30"></div>
+          
+          <div className="flex items-center gap-2">
+            <div className="w-1 h-1 bg-white rounded-full"></div>
+            <p className="text-white/90 text-sm font-light tracking-wide" style={{ fontFamily: 'var(--font-cantata)' }}>
+              Est. 1997
+            </p>
+          </div>
+        </div>
+
+        <div ref={textRef} className="mt-4 max-w-2xl">
+          <p className="text-white text-base sm:text-lg" style={{ fontFamily: 'var(--font-cantata)' }}>
             {slides[currentSlide].caption}
           </p>
         </div>
       </div>
 
       {/* 🔄 Extra Spinning Logo Bottom Right */}
-      <div className="absolute bottom-13 md:bottom-8 right-7 md:right-10 z-20 animate-spin-slow">
+      <div
+        className="absolute z-20 animate-spin-slow
+                  right-[-3.5rem] bottom-[1rem]
+                  md:right-[-7rem] md:bottom-[-0.8rem]"
+      >
         <img
           src="/logo/white-wheel-logo.png"
           alt="spin 2"
-          className="w-10 aspect-square object-contain opacity-60 hover:opacity-90 transition duration-500"
+          className="w-30 md:w-65 aspect-square object-contain opacity-60 hover:opacity-90 transition duration-500"
         />
       </div>
 

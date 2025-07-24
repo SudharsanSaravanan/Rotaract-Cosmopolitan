@@ -1,15 +1,17 @@
 @import "tailwindcss";
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Aldrich&family=Cantata+One&display=swap');
 
 :root {
   --font-geist-sans: 'Inter', sans-serif;
+  --font-aldrich: 'Aldrich', sans-serif;
+  --font-cantata: 'Cantata One', serif;
 }
 
 body {
   font-family: var(--font-geist-sans);
 }
 
+/* Your existing styles... */
 .gradient-bg {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
@@ -27,6 +29,7 @@ body {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
 .animate-spin-slow {
   animation: spin-slow 18s linear infinite;
 }
@@ -35,6 +38,7 @@ body {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
