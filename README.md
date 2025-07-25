@@ -14,6 +14,7 @@ npm install countup.js
 npm i lucide-react
 npm install gsap
 npm install firebase
+npm install react-icons
 ```
 
 ### 2. Start Development Server
