@@ -8,6 +8,7 @@ import { useEffect, useRef } from "react";
 import { CountUp } from "countup.js";
 import AnnouncementsCarousel from "@/components/ui/Announcements";
 import AboutSection from "@/components/ui/AboutUs";
+import SponsorCarousel from "@/components/ui/Sponsor";
 
 export default function Home() {
   const countUpRefs = {
@@ -41,6 +42,8 @@ export default function Home() {
       <AnnouncementsCarousel/>
 
       <AboutSection/>
+
+      <SponsorCarousel/>
 
       {/* Innovation Banner Component */}
       <InnovationBanner />
