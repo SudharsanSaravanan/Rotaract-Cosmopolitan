@@ -57,7 +57,7 @@ export default function InnovationBanner() {
   return (
     <section
       ref={bannerRef}
-      className="relative w-full h-[40vh] sm:h-[70vh] flex items-center justify-center overflow-hidden px-4 mx-auto bg-[#000843] text-white"
+      className="relative w-full h-[40vh] sm:h-[70vh] flex items-center justify-center overflow-hidden px-4 mx-auto bg-[#101924] text-white"
     >
       {/* Robot Hand (Top, Right) */}
       <Image

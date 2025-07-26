@@ -18,7 +18,7 @@ const SponsorCarousel = () => {
   ];
 
   return (
-    <div className="w-full py-6 md:py-10 bg-white overflow-hidden">
+    <div className="w-full py-6 md:py-10 bg-[#BDB3A3] overflow-hidden">
       <div className="text-center mb-8 md:mb-12">
         <h2
           className="text-xl md:text-5xl font-bold text-gray-800"

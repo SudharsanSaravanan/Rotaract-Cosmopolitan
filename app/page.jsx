@@ -7,6 +7,9 @@ import AnnouncementsCarousel from "@/components/ui/Announcements";
 import AboutSection from "@/components/ui/AboutUs";
 import SponsorCarousel from "@/components/ui/Sponsor";
 import TeamMembers from "@/components/ui/Team";
+import StatsCounter from "@/components/ui/Stats";
+import RecentEvents from "@/components/ui/RecentEvents";
+import WhyJoinUs from "@/components/ui/WhyJoinUs";
 
 export default function Home() {
 
@@ -25,6 +28,15 @@ export default function Home() {
 
       {/* Innovation Banner Component */}
       <InnovationBanner />
+
+      <StatsCounter/>
+      {/* Stats Counter Component */}
+
+      <WhyJoinUs />
+
+      <RecentEvents />
+
+      {/* Additional sections can be added here */}
     </Layout>
   );
 }

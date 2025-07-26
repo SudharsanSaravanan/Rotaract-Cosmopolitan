@@ -150,13 +150,13 @@ const HeroBanner = () => {
       {/* 🔄 Extra Spinning Logo Bottom Right */}
       <div
         className="absolute z-20 animate-spin-slow
-                  right-[-3.5rem] bottom-[1rem]
-                  md:right-[-7rem] md:bottom-[-0.8rem]"
+                  right-[1rem] bottom-[1rem]
+                  md:right-[1.2rem] md:bottom-[1.2rem]"
       >
         <img
           src="/logo/white-wheel-logo.png"
           alt="spin 2"
-          className="w-30 md:w-65 aspect-square object-contain opacity-60 hover:opacity-90 transition duration-500"
+          className="w-0 md:w-15 aspect-square object-contain opacity-100 hover:opacity-100 transition duration-500"
         />
       </div>
 
