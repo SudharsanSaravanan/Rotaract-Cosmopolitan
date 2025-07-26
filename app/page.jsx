@@ -6,6 +6,8 @@ import InnovationBanner from "@/components/ui/InnovationBanner"; // Import the n
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { CountUp } from "countup.js";
+import AnnouncementsCarousel from "@/components/ui/Announcements";
+import AboutSection from "@/components/ui/AboutUs";
 
 export default function Home() {
   const countUpRefs = {
@@ -35,6 +37,10 @@ export default function Home() {
     <Layout>
       {/* Hero Banner Component */}
       <HeroBanner />
+
+      <AnnouncementsCarousel/>
+
+      <AboutSection/>
 
       {/* Innovation Banner Component */}
       <InnovationBanner />
