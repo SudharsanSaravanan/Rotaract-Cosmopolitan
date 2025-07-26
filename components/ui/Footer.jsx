@@ -1,8 +1,6 @@
 import {
   FaFacebookF,
-  FaTwitter,
   FaInstagram,
-  FaYoutube,
   FaLinkedinIn
 } from 'react-icons/fa';
 
@@ -27,9 +25,9 @@ export default function Footer() {
         {/* Left Section */}
         <div className="space-y-4">
           {/* Logo Placeholder */}
-          <div className="text-lg font-bold">
+          <div className="text-[16px] md:text-lg font-normal">
             Rotaract Club of Coimbatore{' '}
-            <span className="text-2xl text-[#BDB3A3] font-normal font-[Italianno]">
+            <span className="text-xl md:text-2xl text-[#BDB3A3] font-normal font-[Italianno]">
               Cosmopolitan
             </span>
             <div className="text-xs text-[#BDB3A3]">District 3206</div>

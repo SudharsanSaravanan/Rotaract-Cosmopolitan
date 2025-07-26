@@ -76,7 +76,7 @@ const AboutSection = () => {
             {/* Read More Button */}
             <div className="pt-6">
               <a 
-                href="/about-us"
+                href="/about"
                 className="inline-flex items-center bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-sm px-8 py-4 rounded-lg border border-white/30 hover:from-white/30 hover:to-white/20 transition-all duration-300 transform hover:scale-105 group"
               >
                 <span 
