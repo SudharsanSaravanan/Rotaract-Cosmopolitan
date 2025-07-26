@@ -10,6 +10,7 @@ import TeamMembers from "@/components/ui/Team";
 import StatsCounter from "@/components/ui/Stats";
 import RecentEvents from "@/components/ui/RecentEvents";
 import WhyJoinUs from "@/components/ui/WhyJoinUs";
+import FAQ from "@/components/ui/Faq";
 
 export default function Home() {
 
@@ -22,7 +23,7 @@ export default function Home() {
 
       <AboutSection/>
 
-      <SponsorCarousel/>
+      {/* <SponsorCarousel/> */}
 
       <TeamMembers />
 
@@ -35,6 +36,8 @@ export default function Home() {
       <WhyJoinUs />
 
       <RecentEvents />
+
+      <FAQ/>
 
       {/* Additional sections can be added here */}
     </Layout>

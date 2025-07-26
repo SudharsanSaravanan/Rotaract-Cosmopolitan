@@ -1,6 +1,4 @@
 "use client";
-import { useState } from "react";
-
 const announcements = [
   "We are proud and happy to announce that our team for the year 2025–26 has won the bid to host DEWS – District Editorial Workshop and Seminar!",
   "Registrations for our next major event open soon! Stay tuned for more details and registration links.",
@@ -13,8 +11,6 @@ const announcements = [
 ];
 
 export default function AnnouncementsCarousel() {
-  const [isPaused, setIsPaused] = useState(false);
-
   return (
     <div
       className="w-full py-10 px-4 relative overflow-hidden group"
@@ -22,8 +18,6 @@ export default function AnnouncementsCarousel() {
         backgroundColor: "#0E141C",
         minHeight: "160px",
       }}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
     >
       {/* Header */}
       <div className="mb-8 text-center">
@@ -38,9 +32,7 @@ export default function AnnouncementsCarousel() {
       {/* Scrolling Text */}
       <div className="relative overflow-hidden">
         <div
-          className={`whitespace-nowrap inline-block ${
-            isPaused ? "" : "animate-scroll"
-          }`}
+          className="whitespace-nowrap inline-block animate-scroll"
           style={{
             fontFamily: "var(--font-aldrich)",
             color: "#BDB3A3",
