@@ -82,7 +82,7 @@ export default function InnovationBanner() {
       />
 
       {/* Static Quote */}
-      <div className="text-center z-10 absolute bottom-40 md:bottom-45 md:static md:inset-0 md:flex md:items-center md:justify-center">
+      <div className="text-center z-10 absolute bottom-38 md:bottom-45 md:static md:inset-0 md:flex md:items-center md:justify-center">
         <p className="text-xs sm:text-xl md:text-[22px] font-light" style={{ fontFamily: 'var(--font-cantata)' }}>
           “Where purpose meets passion to ignite change across every horizon.”
         </p>
