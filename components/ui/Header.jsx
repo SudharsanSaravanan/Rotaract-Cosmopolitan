@@ -96,25 +96,43 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation Dropdown - Simplified */}
-        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+        {/* Mobile Navigation Dropdown - Perfect Implementation */}
+        <div className={`md:hidden transition-all duration-300 ease-in-out ${
+          isMenuOpen 
+            ? 'max-h-screen opacity-100 visible' 
+            : 'max-h-0 opacity-0 invisible overflow-hidden'
         }`}>
-          <div className="px-4 py-4 space-y-3 bg-[#0E141C]/90 backdrop-blur-lg border-t border-white/10">
+          <div className="pb-4 space-y-1 bg-[#0E141C]/95 backdrop-blur-xl border-t border-white/10 shadow-lg">
             {[
               { name: 'Home', href: '/' },
               { name: 'About', href: '/about' },
               { name: 'Events', href: '/events' },
               { name: 'Team', href: '/team' },
               { name: 'Contact', href: '/contact' }
-            ].map((item) => (
+            ].map((item, index) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-2 px-4 text-white/90 hover:text-white transition-colors duration-200"
+                className={`block px-6 py-3 text-white/90 hover:text-white hover:bg-white/5 transition-all duration-200 font-light tracking-wide uppercase border-b border-white/5 last:border-b-0 ${
+                  isMenuOpen ? 'animate-fade-in' : ''
+                }`}
+                style={{ 
+                  fontFamily: 'var(--font-cantata)',
+                  animationDelay: `${index * 50}ms`
+                }}
                 onClick={() => setIsMenuOpen(false)}
               >
-                {item.name}
+                <div className="flex items-center justify-between">
+                  <span>{item.name}</span>
+                  <svg 
+                    className="w-4 h-4 opacity-50 transform transition-transform duration-200 hover:translate-x-1" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
               </Link>
             ))}
           </div>
@@ -123,6 +141,31 @@ export default function Header() {
 
       {/* Subtle bottom gradient */}
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+      
+      {/* Mobile overlay when menu is open */}
+      {isMenuOpen && (
+        <div 
+          className="md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-[-1]"
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
+
+      <style jsx>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fade-in {
+          animation: fade-in 0.3s ease-out forwards;
+        }
+      `}</style>
     </header>
   )
 }
