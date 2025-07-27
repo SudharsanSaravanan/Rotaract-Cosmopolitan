@@ -1,328 +1,425 @@
-"use client"
+'use client';
+import React, { useState } from 'react';
+import { Phone, Mail, MapPin, Instagram, Linkedin, Users } from 'lucide-react';
+import Layout from '@/components/ui/Layout';
 
-import Layout from "@/components/ui/Layout"
-import { useState } from "react"
-
-export default function ContactPage() {
+const ContactPage = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    projectType: "",
-    message: "",
-  })
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Simple mailto functionality
-    const subject = `Landing Page Project Inquiry from ${formData.name}`
-    const body = `
-Name: ${formData.name}
-Email: ${formData.email}
-Company: ${formData.company}
-Project Type: ${formData.projectType}
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
 
-Message:
-${formData.message}
-    `
-    window.location.href = `mailto:hello@webcraft.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-  }
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setSubmitMessage('Please fill in all required fields.');
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitMessage(''), 3000);
+      return;
+    }
+    
+    // Simulate form submission
+    setTimeout(() => {
+      setSubmitMessage('Thank you for your message! We will get back to you soon.');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      });
+      setIsSubmitting(false);
+      
+      // Clear success message after 5 seconds
+      setTimeout(() => setSubmitMessage(''), 5000);
+    }, 1500);
+  };
+
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: 'PHONE',
+      details: ['+91 98765 43210', '+91 87654 32109'],
+      color: '#0E141C'
+    },
+    {
+      icon: Mail,
+      title: 'EMAIL',
+      details: ['info@rotaractcoimbatore.org', 'president@rotaractcoimbatore.org'],
+      color: '#314B6E'
+    },
+    {
+      icon: MapPin,
+      title: 'LOCATION',
+      details: ['Coimbatore, Tamil Nadu', 'India - 641001'],
+      color: '#607EA2'
+    }
+  ];
+
+  const socialLinks = [
+    {
+      name: 'Instagram',
+      icon: Instagram,
+      url: 'https://instagram.com/rotaractcoimbatore',
+      color: '#BDB3A3'
+    },
+    {
+      name: 'LinkedIn',
+      icon: Linkedin,
+      url: 'https://linkedin.com/company/rotaractcoimbatore',
+      color: '#314B6E'
+    },
+    {
+      name: 'Join Us',
+      icon: Users,
+      url: '/join',
+      color: '#0E141C'
+    }
+  ];
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-teal-600 via-teal-500 to-teal-400 py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-teal-800/20 to-teal-600/20"></div>
-          <div className="absolute -top-40 -left-40 w-80 h-80 bg-white rounded-full mix-blend-overlay filter blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-yellow-300 rounded-full mix-blend-overlay filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
-        </div>
+    <div className="min-h-screen" style={{ backgroundColor: '#BDB3A3', paddingTop: '35px' }}>
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 25% 25%, #0E141C 1px, transparent 1px),
+                           radial-gradient(circle at 75% 75%, #314B6E 1px, transparent 1px)`,
+          backgroundSize: '100px 100px, 150px 150px'
+        }}></div>
+      </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-6">
-            <span className="w-2 h-2 bg-yellow-400 rounded-full mr-2 animate-ping"></span>
+      <div className="relative z-10 container mx-auto px-4 py-12 md:py-16">
+        {/* Header */}
+        <div className="text-center mb-12 md:mb-16">
+          <p 
+            className="text-sm md:text-md font-light tracking-[0.3em] uppercase mb-6"
+            style={{ 
+              fontFamily: "var(--font-cantata)",
+              color: '#314B6E'
+            }}
+          >
             Get In Touch
-          </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
-            Let's Build Your
-            <span className="block bg-gradient-to-r from-yellow-300 to-teal-400 bg-clip-text text-transparent">
-              Perfect Landing Page
-            </span>
+          </p>
+          
+          <h1 
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-wide"
+            style={{ 
+              fontFamily: "var(--font-aldrich)",
+              color: '#0E141C'
+            }}
+          >
+            CONTACT US
           </h1>
-          <p className="text-lg sm:text-xl text-white mb-8 max-w-2xl mx-auto font-light leading-relaxed">
-            Ready to boost your conversions? We'd love to hear about your project and discuss how we can help create a
-            landing page that drives real results.
+
+          <div 
+            className="w-24 h-1 mx-auto mb-8"
+            style={{ backgroundColor: '#607EA2' }}
+          ></div>
+
+          <p 
+            className="text-base md:text-lg max-w-3xl mx-auto leading-relaxed"
+            style={{ 
+              fontFamily: "var(--font-cantata)",
+              color: '#607EA2'
+            }}
+          >
+            Ready to make a difference? Connect with us to learn more about our initiatives, 
+            join our community, or collaborate on meaningful projects.
           </p>
         </div>
-      </section>
 
-      {/* Contact Form Section */}
-      <section className="py-24 bg-gradient-to-br from-teal-50 via-white to-teal-100 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center px-4 py-2 bg-teal-100 rounded-full text-teal-700 text-sm font-semibold mb-6">
-              <span className="w-2 h-2 bg-teal-500 rounded-full mr-2 animate-pulse"></span>
-              Start Your Project
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
+          {/* Contact Information - Left Side */}
+          <div className="space-y-8">
+            {/* Contact Info Cards */}
+            <div className="space-y-6">
+              {contactInfo.map((info, index) => (
+                <div 
+                  key={index}
+                  className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div 
+                      className="p-3 rounded-full"
+                      style={{ backgroundColor: `${info.color}15` }}
+                    >
+                      <info.icon 
+                        size={24} 
+                        style={{ color: info.color }}
+                      />
+                    </div>
+                    <div>
+                      <h3 
+                        className="text-lg font-bold mb-2 tracking-wide"
+                        style={{ 
+                          fontFamily: "var(--font-aldrich)",
+                          color: info.color
+                        }}
+                      >
+                        {info.title}
+                      </h3>
+                      {info.details.map((detail, i) => (
+                        <p 
+                          key={i}
+                          className="text-sm leading-relaxed"
+                          style={{ 
+                            fontFamily: "var(--font-cantata)",
+                            color: '#607EA2'
+                          }}
+                        >
+                          {detail}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-black mb-6 leading-tight">
-              Tell Us About Your
-              <span className="block bg-gradient-to-r from-teal-600 via-teal-500 to-yellow-400 bg-clip-text text-transparent">
-                Landing Page Vision
-              </span>
-            </h2>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto font-light leading-relaxed">
-              Fill out the form below and we'll get back to you within 24 hours with a custom proposal for your landing
-              page project.
-            </p>
+
+            {/* Social Media Links */}
+            <div className="bg-white rounded-lg p-6 shadow-lg">
+              <h3 
+                className="text-lg font-bold mb-6 tracking-wide"
+                style={{ 
+                  fontFamily: "var(--font-aldrich)",
+                  color: '#0E141C'
+                }}
+              >
+                CONNECT WITH US
+              </h3>
+              
+              <div className="grid grid-cols-3 gap-4">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target={social.name !== 'Join Us' ? '_blank' : '_self'}
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center p-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-md border-2 border-transparent hover:border-current"
+                    style={{ backgroundColor: `${social.color}10` }}
+                  >
+                    <div 
+                      className="mb-2 p-2 rounded-full"
+                      style={{ backgroundColor: `${social.color}20` }}
+                    >
+                      <social.icon 
+                        size={20} 
+                        style={{ color: social.color }}
+                      />
+                    </div>
+                    <span 
+                      className="text-xs font-medium tracking-wider"
+                      style={{ 
+                        fontFamily: "var(--font-cantata)",
+                        color: social.color
+                      }}
+                    >
+                      {social.name}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-teal-100">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+          {/* Contact Form - Right Side */}
+          <div className="bg-white rounded-lg p-6 md:p-8 shadow-lg">
+            <h3 
+              className="text-xl md:text-2xl font-bold mb-6 tracking-wide"
+              style={{ 
+                fontFamily: "var(--font-aldrich)",
+                color: '#0E141C'
+              }}
+            >
+              SEND US A MESSAGE
+            </h3>
+
+            {submitMessage && (
+              <div 
+                className="mb-6 p-4 rounded-lg text-center"
+                style={{ 
+                  backgroundColor: '#607EA215',
+                  color: '#0E141C',
+                  fontFamily: "var(--font-cantata)"
+                }}
+              >
+                {submitMessage}
+              </div>
+            )}
+
+            <div className="space-y-6">
+              {/* Name and Email Row */}
+              <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label 
+                    className="block text-sm font-medium mb-2"
+                    style={{ 
+                      fontFamily: "var(--font-cantata)",
+                      color: '#314B6E'
+                    }}
+                  >
                     Full Name *
                   </label>
                   <input
                     type="text"
-                    id="name"
                     name="name"
-                    required
                     value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
-                    placeholder="John Doe"
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-300"
+                    style={{ 
+                      borderColor: '#607EA2',
+                      fontFamily: "var(--font-cantata)"
+                    }}
+                    placeholder="Enter your full name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label 
+                    className="block text-sm font-medium mb-2"
+                    style={{ 
+                      fontFamily: "var(--font-cantata)",
+                      color: '#314B6E'
+                    }}
+                  >
                     Email Address *
                   </label>
                   <input
                     type="email"
-                    id="email"
                     name="email"
-                    required
                     value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
-                    placeholder="john@company.com"
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-300"
+                    style={{ 
+                      borderColor: '#607EA2',
+                      fontFamily: "var(--font-cantata)"
+                    }}
+                    placeholder="Enter your email"
                   />
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              {/* Phone and Subject Row */}
+              <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Company Name
+                  <label 
+                    className="block text-sm font-medium mb-2"
+                    style={{ 
+                      fontFamily: "var(--font-cantata)",
+                      color: '#314B6E'
+                    }}
+                  >
+                    Phone Number
                   </label>
                   <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
-                    placeholder="Your Company"
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-300"
+                    style={{ 
+                      borderColor: '#607EA2',
+                      fontFamily: "var(--font-cantata)"
+                    }}
+                    placeholder="Enter your phone number"
                   />
                 </div>
                 <div>
-                  <label htmlFor="projectType" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Landing Page Type *
+                  <label 
+                    className="block text-sm font-medium mb-2"
+                    style={{ 
+                      fontFamily: "var(--font-cantata)",
+                      color: '#314B6E'
+                    }}
+                  >
+                    Subject *
                   </label>
                   <select
-                    id="projectType"
-                    name="projectType"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
                     required
-                    value={formData.projectType}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
+                    className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-300"
+                    style={{ 
+                      borderColor: '#607EA2',
+                      fontFamily: "var(--font-cantata)"
+                    }}
                   >
-                    <option value="">Select project type</option>
-                    <option value="Product Launch">Product Launch</option>
-                    <option value="Lead Generation">Lead Generation</option>
-                    <option value="Event Registration">Event Registration</option>
-                    <option value="App Download">App Download</option>
-                    <option value="Course/Education">Course/Education</option>
-                    <option value="E-commerce">E-commerce</option>
-                    <option value="Other">Other</option>
+                    <option value="">Select a subject</option>
+                    <option value="membership">Membership Inquiry</option>
+                    <option value="collaboration">Partnership/Collaboration</option>
+                    <option value="volunteer">Volunteer Opportunities</option>
+                    <option value="general">General Information</option>
+                    <option value="other">Other</option>
                   </select>
                 </div>
               </div>
 
+              {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Project Details *
+                <label 
+                  className="block text-sm font-medium mb-2"
+                  style={{ 
+                    fontFamily: "var(--font-cantata)",
+                    color: '#314B6E'
+                  }}
+                >
+                  Message *
                 </label>
                 <textarea
-                  id="message"
                   name="message"
-                  required
-                  rows={6}
                   value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors resize-vertical"
-                  placeholder="Tell us about your landing page goals, target audience, timeline, and any specific requirements..."
+                  onChange={handleInputChange}
+                  required
+                  rows={5}
+                  className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-300 resize-vertical"
+                  style={{ 
+                    borderColor: '#607EA2',
+                    fontFamily: "var(--font-cantata)"
+                  }}
+                  placeholder="Tell us about your inquiry..."
                 ></textarea>
               </div>
 
+              {/* Submit Button */}
               <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white py-4 px-8 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                onClick={handleSubmit}
+                disabled={isSubmitting}
+                className="w-full py-4 text-white font-medium tracking-[0.1em] uppercase transition-all duration-300 hover:opacity-90 rounded-lg disabled:opacity-50"
+                style={{ 
+                  fontFamily: "var(--font-cantata)",
+                  backgroundColor: '#0E141C'
+                }}
               >
-                Send Project Inquiry
+                {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
               </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Info Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-teal-100 rounded-full text-teal-700 text-sm font-semibold mb-6">
-              <span className="w-2 h-2 bg-teal-500 rounded-full mr-2 animate-pulse"></span>
-              Get In Touch
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-black mb-6 leading-tight">
-              Other Ways to
-              <span className="block bg-gradient-to-r from-teal-600 to-yellow-400 bg-clip-text text-transparent">
-                Reach Us
-              </span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-black mb-2 group-hover:text-teal-600 transition-colors">
-                Email Us
-              </h3>
-              <p className="text-gray-700 font-light">hello@webcraft.com</p>
-              <p className="text-gray-700 font-light">projects@webcraft.com</p>
-            </div>
-
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-black mb-2 group-hover:text-teal-600 transition-colors">
-                Response Time
-              </h3>
-              <p className="text-gray-700 font-light">Within 24 hours</p>
-              <p className="text-gray-700 font-light">Monday - Friday</p>
-            </div>
-
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-black mb-2 group-hover:text-teal-600 transition-colors">
-                Project Delivery
-              </h3>
-              <p className="text-gray-700 font-light">2-4 weeks typical</p>
-              <p className="text-gray-700 font-light">Rush jobs available</p>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-24 bg-gradient-to-br from-teal-50 via-white to-teal-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-teal-100 rounded-full text-teal-700 text-sm font-semibold mb-6">
-              <span className="w-2 h-2 bg-teal-500 rounded-full mr-2 animate-pulse"></span>
-              FAQ
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-black mb-6 leading-tight">
-              Common
-              <span className="block bg-gradient-to-r from-teal-600 to-yellow-400 bg-clip-text text-transparent">
-                Questions
-              </span>
-            </h2>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              {
-                question: "How long does it take to build a landing page?",
-                answer:
-                  "Most landing pages take 2-4 weeks from start to finish, depending on complexity and revisions. Rush jobs can be completed in 1-2 weeks.",
-              },
-              {
-                question: "What's included in your landing page service?",
-                answer:
-                  "We provide complete landing page design, development, mobile optimization, basic SEO, and conversion optimization. We also include 30 days of free support after launch.",
-              },
-              {
-                question: "Do you provide hosting and domain setup?",
-                answer:
-                  "We can help with deployment and setup, but hosting and domain registration are handled separately. We'll guide you through the best options for your needs.",
-              },
-              {
-                question: "Can you integrate with my existing tools?",
-                answer:
-                  "Yes! We can integrate with most popular tools like CRM systems, email marketing platforms, analytics tools, and payment processors.",
-              },
-              {
-                question: "What if I need changes after the landing page is live?",
-                answer:
-                  "We offer 30 days of free minor adjustments after launch. For major changes or ongoing updates, we provide affordable maintenance packages.",
-              },
-            ].map((faq, index) => (
-              <div
-                key={index}
-                className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-teal-100 p-6 hover:shadow-xl transition-shadow"
-              >
-                <h3 className="text-xl font-bold text-black mb-3">{faq.question}</h3>
-                <p className="text-gray-700 font-light leading-relaxed">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      </div>
+    </div>
     </Layout>
-  )
-}
+  );
+};
+
+export default ContactPage;
