@@ -205,7 +205,7 @@ const AboutPage = () => {
                 }}
               >
                 <img 
-                  src="/about-us/boomrang1.jpg"
+                  src="/about/boomrang1.jpg"
                   alt="Rotaract Club Community Service"
                   className="w-full h-full object-cover filter brightness-110 hover:brightness-125 transition-all duration-300"
                 />
