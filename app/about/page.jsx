@@ -5,7 +5,10 @@ import React from 'react';
 const AboutPage = () => {
   return (
     <Layout>
-    <div className="min-h-screen" style={{ backgroundColor: '#607EA2', paddingTop: '15px' }}>
+    <div className="min-h-screen" style={{ 
+      background: 'linear-gradient(135deg, #607EA2 0%, #3B5A7E 50%, #2A4060 100%)', 
+      paddingTop: '15px' 
+    }}>
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -37,7 +40,7 @@ const AboutPage = () => {
           >
             ROTARACT CLUB OF
             <span style={{ color: '#0E141C' }}> COIMBATORE</span><br />
-            COSMOPOLITANS
+            COSMOPOLITAN
           </h1>
 
           <div 
@@ -202,7 +205,7 @@ const AboutPage = () => {
                 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                  src="/about-us/boomrang1.jpg"
                   alt="Rotaract Club Community Service"
                   className="w-full h-full object-cover filter brightness-110 hover:brightness-125 transition-all duration-300"
                 />

@@ -48,7 +48,7 @@ export default function Header() {
                 className="text-[#ffffffd6] text-[0.65rem] sm:text-xs md:text-[13px] font-light tracking-wider uppercase opacity-80" 
                 style={{ fontFamily: 'var(--font-cantata)' }}
               >
-                Cosmopolitans
+                Cosmopolitan
               </span>
             </div>
           </Link>

@@ -13,19 +13,9 @@ const HeroBanner = () => {
   const slides = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80",
+      image: "/hero/greenbg_team.jpg",
       caption: "Serving smiles through community outreach and education."
     },
-    {
-      id: 2,
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80",
-      caption: "Empowering youth leadership and building strong futures."
-    },
-    {
-      id: 3,
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80",
-      caption: "Creating sustainable impact through unity and service."
-    }
   ]
 
   useEffect(() => {
@@ -91,7 +81,7 @@ const HeroBanner = () => {
       </div>
 
       {/* Main Heading & Caption */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4" style={{ paddingTop: 'calc(30vh - 100px)' }}>
+      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4" style={{ paddingTop: 'calc(40vh - 100px)' }}>
         {/* Minimal Welcome */}
         <div className="mb-2 md:mb-3">
           <p className="text-white/80 text-sm md:text-base font-light tracking-[0.15em] uppercase" style={{ fontFamily: 'var(--font-cantata)' }}>
@@ -135,7 +125,7 @@ const HeroBanner = () => {
           <div className="flex items-center gap-2">
             <div className="w-1 h-1 bg-white rounded-full"></div>
             <p className="text-white/90 text-sm font-light tracking-wide" style={{ fontFamily: 'var(--font-cantata)' }}>
-              Est. 1997
+              Est. 2014
             </p>
           </div>
         </div>

@@ -39,7 +39,7 @@ const AboutSection = () => {
               >
                 ROTARACT CLUB OF<br />
                 <span style={{ color: '#BDB3A3' }}>COIMBATORE</span><br />
-                COSMOPOLITANS
+                COSMOPOLITAN
               </h1>
             </div>
 
@@ -113,7 +113,7 @@ const AboutSection = () => {
                 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80"
+                  src="/about-us/greedam_cosmo1.jpg"
                   alt="Rotaract Club Logo"
                   className="w-full h-full object-cover filter brightness-110 hover:brightness-125 transition-all duration-300"
                 />
