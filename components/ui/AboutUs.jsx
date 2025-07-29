@@ -113,7 +113,7 @@ const AboutSection = () => {
                 }}
               >
                 <img 
-                  src="/about-us/greedam_cosmo1.jpg"
+                  src="/about/greedam_cosmo1.jpg"
                   alt="Rotaract Club Logo"
                   className="w-full h-full object-cover filter brightness-110 hover:brightness-125 transition-all duration-300"
                 />
