@@ -28,7 +28,7 @@ const WhyJoinUs = () => {
               className="text-white/80 text-base md:text-lg max-w-md mx-auto md:mx-0 leading-relaxed"
               style={{ fontFamily: "var(--font-cantata)" }}
             >
-                Join Rotaract Club of Coimbatore Cosmopolitans and become part of a dynamic community
+                Join Rotaract Club of Coimbatore Cosmopolitan and become part of a dynamic community
                 dedicated to service, leadership, and positive change.
                 Engage in impactful projects, develop lifelong friendships,
                 and grow as a leader while making a difference in society.
