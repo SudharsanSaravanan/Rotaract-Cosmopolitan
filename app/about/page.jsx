@@ -73,9 +73,7 @@ const AboutPage = () => {
                   opacity: 0.9
                 }}
               >
-                Our club stands as a beacon of service and fellowship, embodying the spirit of 
-                <span className="font-semibold" style={{ color: '#BDB3A3' }}> "Service Above Self" </span> 
-                that defines the Rotaract movement worldwide.
+                Rotaract Club is a vibrant community of passionate young individuals dedicated to service, leadership, and finding purposeful change. Joining hands with Rotary's global vision, we empower students and young professionals to become a force for good in society through service, collaboration, and innovation.
               </p>
             </div>
 
@@ -99,10 +97,7 @@ const AboutPage = () => {
                   opacity: 0.9
                 }}
               >
-                Founded with the vision of creating meaningful change through collaborative action, 
-                our club brings together diverse talents and perspectives. We focus on community service, 
-                professional development, and international understanding while fostering lifelong friendships 
-                and leadership skills.
+                We are proud members of the Cosmopolitan family, a diverse and energetic collection of individuals renowned for its history of powerful service and visionary leadership. As members of this elite group, we share a heritage of excellence and a sense of inclusivity that compels us to make meaningful changes in communities. This year, with the energizing theme Revival, we strive to breathe new life into our values, projects, and communities.
               </p>
             </div>
 
@@ -126,9 +121,7 @@ const AboutPage = () => {
                   opacity: 0.9
                 }}
               >
-                Through innovative projects and community initiatives, we strive to create lasting impact 
-                while developing the next generation of leaders. Our commitment to excellence drives us 
-                to continuously seek new ways to serve our community and make a difference in the world.
+                Our core is the belief in a strong sense of personal growth and social impact. We fund projects related to real-life issues — ranging from environmental consciousness and education to health, inclusiveness, and mental well-being. Every event is designed to develop leadership, character, and resilience. By joining us, you become part of a movement — one that believes in revival in all its simplicity.
               </p>
             </div>
 
@@ -146,12 +139,12 @@ const AboutPage = () => {
               
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  'Service Above Self',
-                  'Leadership Development',
-                  'Community Impact',
-                  'International Understanding',
-                  'Professional Growth',
-                  'Fellowship & Friendship'
+                  'Service',
+                  'Leadership',
+                  'Collaboration',
+                  'Innovation',
+                  'Inclusivity',
+                  'Revival'
                 ].map((value, index) => (
                   <div key={index} className="flex items-center space-x-2">
                     <div 
@@ -174,6 +167,7 @@ const AboutPage = () => {
 
             {/* Join Us CTA */}
             <div className="pt-4 pb-10 md:pb-0">
+              <a href='/contact'>
               <button 
                 className="px-8 py-4 rounded-lg border-2 transition-all duration-300 hover:scale-105"
                 style={{ 
@@ -189,6 +183,7 @@ const AboutPage = () => {
                   JOIN OUR MISSION
                 </span>
               </button>
+              </a>
             </div>
           </div>
 
@@ -269,7 +264,7 @@ const AboutPage = () => {
                   color: '#BDB3A3'
                 }}
               >
-                "Building communities, inspiring change"
+                "Reawaken potential, remake the future"
               </p>
             </div>
 

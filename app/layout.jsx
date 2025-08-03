@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <title>Cosmopolitans - Coimbatore</title>
+        <title>Cosmopolitan - Coimbatore</title>
         <meta name="description" content="" />
       </head>
       <body className={inter.className}>{children}</body>

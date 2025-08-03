@@ -70,7 +70,7 @@ const TeamPage = () => {
             className="text-base md:text-lg max-w-3xl mx-auto text-white/70 leading-relaxed"
             style={{ fontFamily: "var(--font-cantata)" }}
           >
-            Meet the dedicated members of the Rotaract Club of Coimbatore Cosmopolitans who drive our mission of service and leadership.
+            Meet the dedicated members of the Rotaract Club of Coimbatore Cosmopolitan who drive our mission of service and leadership.
           </p>
         </div>
 
