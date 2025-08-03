@@ -14,19 +14,19 @@ const StatsCounter = () => {
     {
       id: 'years',
       title: 'Years in Service',
-      target: 15,
+      target: 11,
       suffix: '+'
     },
     {
       id: 'projects',
       title: 'Projects Completed',
-      target: 150,
+      target: 17,
       suffix: '+'
     },
     {
       id: 'members',
       title: 'Active Members',
-      target: 85,
+      target: 36,
       suffix: '+'
     }
   ];

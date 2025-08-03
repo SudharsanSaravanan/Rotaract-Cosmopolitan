@@ -1,18 +1,14 @@
 import {
-  FaFacebookF,
   FaInstagram,
   FaLinkedinIn
 } from 'react-icons/fa';
 
 export default function Footer() {
   const socials = [
-    { icon: FaFacebookF, url: "https://www.facebook.com/rtrcbecosmopolitan/" }, // Placeholder
-         
     {
       icon: FaInstagram,
       url: "https://www.instagram.com/rac_cbe_cosmopolitan?igsh=NGRxa2FyamtjcDVu"
     },
-         
     {
       icon: FaLinkedinIn,
       url: "https://www.linkedin.com/company/rotaract-club-of-coimbatore-cosmopolitan/"
@@ -50,7 +46,7 @@ export default function Footer() {
               WhatsApp: +91 9488152297 | +91 7010722265
             </p>
             <p className="text-[#BDB3A3] mt-1 hover:text-[#607EA2] transition duration-200">
-              Mail: contact@rotaractcbcosmopolitan.in
+              Mail: raccbecosmopolitan2014@gmail.com 
             </p>
           </div>
 

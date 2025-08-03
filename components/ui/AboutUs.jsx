@@ -14,8 +14,6 @@ const AboutSection = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-6 py-16">
-
-
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
           {/* Text Content - Left Side */}
@@ -48,28 +46,14 @@ const AboutSection = () => {
                 className="text-xl leading-relaxed text-white/95"
                 style={{ fontFamily: 'var(--font-cantata)' }}
               >
-                Our club stands as a beacon of service and fellowship, embodying the spirit of 
-                <span className="font-semibold" style={{ color: '#BDB3A3' }}> "Service Above Self"</span> 
-                that defines the Rotaract movement worldwide.
+                Rotaract Club is a vibrant community of passionate young individuals dedicated to service, leadership, and finding purposeful change. Joining hands with Rotary's global vision, we empower students and young professionals to become a force for good in society through service, collaboration, and innovation.
               </p>
               
               <p 
                 className="text-xl leading-relaxed text-white/90"
                 style={{ fontFamily: 'var(--font-cantata)' }}
               >
-                Founded with the vision of creating meaningful change through collaborative action, 
-                our club brings together diverse talents and perspectives. We focus on community service, 
-                professional development, and international understanding while fostering lifelong friendships 
-                and leadership skills.
-              </p>
-
-              <p 
-                className="text-xl leading-relaxed text-white/90"
-                style={{ fontFamily: 'var(--font-cantata)' }}
-              >
-                Through innovative projects and community initiatives, we strive to create lasting impact 
-                while developing the next generation of leaders. Our commitment to excellence drives us 
-                to continuously seek new ways to serve our community and make a difference in the world.
+                We are proud members of the Cosmopolitan family, a diverse and energetic collection of individuals renowned for its history of powerful service and visionary leadership. As members of this elite group, we share a heritage of excellence and a sense of inclusivity that compels us to make meaningful changes in communities. This year, with the energizing theme Revival, we strive to breathe new life into our values, projects, and communities.
               </p>
             </div>
 
@@ -161,7 +145,7 @@ const AboutSection = () => {
                   className="text-white/90 text-sm font-medium"
                   style={{ fontFamily: 'var(--font-cantata)' }}
                 >
-                  Service Above Self
+                  Legacy Reawakened
                 </p>
               </div>
             </div>

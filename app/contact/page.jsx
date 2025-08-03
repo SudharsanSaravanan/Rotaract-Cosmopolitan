@@ -56,13 +56,13 @@ const ContactPage = () => {
     {
       icon: Phone,
       title: 'PHONE',
-      details: ['+91 98765 43210', '+91 87654 32109'],
+      details: ['+91 9488152297', '+91 7010722265'],
       color: '#0E141C'
     },
     {
       icon: Mail,
       title: 'EMAIL',
-      details: ['info@rotaractcoimbatore.org', 'president@rotaractcoimbatore.org'],
+      details: ['raccbecosmopolitan2014@gmail.com ', 'rtr.akhils2005@gmail.com'],
       color: '#314B6E'
     },
     {
@@ -77,19 +77,19 @@ const ContactPage = () => {
     {
       name: 'Instagram',
       icon: Instagram,
-      url: 'https://instagram.com/rotaractcoimbatore',
+      url: 'https://www.instagram.com/rac_cbe_cosmopolitan?igsh=NGRxa2FyamtjcDVu',
       color: '#BDB3A3'
     },
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      url: 'https://linkedin.com/company/rotaractcoimbatore',
+      url: 'https://www.linkedin.com/company/rotaract-club-of-coimbatore-cosmopolitan/',
       color: '#314B6E'
     },
     {
       name: 'Join Us',
       icon: Users,
-      url: '/join',
+      url: 'https://docs.google.com/forms/d/e/1FAIpQLSfb8e054T21AlVnbQ-cVZWUjegbqbagUWpRrZd-uQH-Eeq2lw/viewform?usp=send_form',
       color: '#0E141C'
     }
   ];
