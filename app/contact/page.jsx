@@ -78,7 +78,7 @@ const ContactPage = () => {
       name: 'Instagram',
       icon: Instagram,
       url: 'https://www.instagram.com/rac_cbe_cosmopolitan?igsh=NGRxa2FyamtjcDVu',
-      color: '#BDB3A3'
+      color: '#23012C'
     },
     {
       name: 'LinkedIn',
