@@ -167,6 +167,7 @@ const AboutPage = () => {
 
             {/* Join Us CTA */}
             <div className="pt-4 pb-10 md:pb-0">
+              <a href='/contact'>
               <button 
                 className="px-8 py-4 rounded-lg border-2 transition-all duration-300 hover:scale-105"
                 style={{ 
@@ -182,6 +183,7 @@ const AboutPage = () => {
                   JOIN OUR MISSION
                 </span>
               </button>
+              </a>
             </div>
           </div>
 
