@@ -14,10 +14,24 @@ export default function InnovationBanner() {
   const textRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Check if mobile view (below md breakpoint)
-      const isMobile = window.innerWidth < 768;
+    // Check if mobile view (below md breakpoint)
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
+    // Set initial transform styles for images
+    if (robotHandRef.current) {
+      gsap.set(robotHandRef.current, {
+        transform: isMobile ? "translate(200px, -50px) rotate(-20deg)" : "translate(300px, -100px) rotate(-30deg)",
+        opacity: 0,
+      });
+    }
+    if (humanHandRef.current) {
+      gsap.set(humanHandRef.current, {
+        transform: isMobile ? "translate(-200px, 50px) rotate(20deg)" : "translate(-300px, 100px) rotate(30deg)",
+        opacity: 0,
+      });
+    }
+
+    const ctx = gsap.context(() => {
       // Robot Hand Animation
       gsap.fromTo(
         robotHandRef.current,
@@ -111,8 +125,6 @@ export default function InnovationBanner() {
         className="absolute top-[0%] md:top-[10%] -right-[12%] scale-100 md:right-0 md:scale-150 md:w-[350px] md:h-[225px] z-20"
         priority
         style={{
-          transform: window.innerWidth < 768 ? "translate(200px, -50px) rotate(-20deg)" : "translate(300px, -100px) rotate(-30deg)",
-          opacity: 0,
           position: "absolute",
         }}
       />
@@ -127,8 +139,6 @@ export default function InnovationBanner() {
         className="absolute bottom-[0%] md:bottom-[10%] -left-[12%] scale-100 md:left-0 md:scale-150 md:w-[300px] md:h-[225px] z-20"
         priority
         style={{
-          transform: window.innerWidth < 768 ? "translate(-200px, 50px) rotate(20deg)" : "translate(-300px, 100px) rotate(30deg)",
-          opacity: 0,
           position: "absolute",
         }}
       />
