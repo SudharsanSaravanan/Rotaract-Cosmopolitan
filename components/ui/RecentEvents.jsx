@@ -4,28 +4,28 @@ const RecentEvents = () => {
   const events = [
     {
       id: 1,
-      title: "UDHAVAM - ORIENTATION",
-      description: "We are happy to let everyone know that our Orientation \"உதயம்\" was successfully conducted with great enthusiasm and participation from all members.",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      date: "13th July, 2024",
-      venue: "Texcity Hall"
+      title: "TTNS ANNUAL FUNCTION",
+      description: "An annual gathering by the Rotaract Club of Coimbatore Cosmopolitan and the family of Rotary Club of Coimbatore Cosmopolitan. A celebration of unity, service, and shared achievements — truly an event to remember.",
+      image: "/events/ttns.jpg",
+      date: "27/07/2025",
+      venue: "BMN Subramaniyam Vignesh Mahal"
     },
     {
       id: 2,
-      title: "LUMOS - INSTALLATION CEREMONY",
-      description: "Warm Texcity Greetings 💜 \"Every new beginning comes from some other beginning's end.\" We welcome you all to witness our installation ceremony.",
-      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      date: "25th June, 2024",
-      venue: "Grand Hall"
+      title: "CHIT CHAAT",
+      description: "A mindful munch experience where good food meets great conversations. Members gathered over tasty bites, savoring the moment while sharing stories, laughter, and lighthearted reflections. More than just snacks — it was about slowing down, connecting, and enjoying the present.",
+      image: "/events/chitchat.jpg",
+      date: "19/07/2025",
+      venue: "ANANDHAAS"
     },
     {
       id: 3,
-      title: "TEX SEVAI!",
-      description: "Warm Rotaract Greetings, \"Happiness doesn't result from what we get, but from what we give.\" Join us in our community service initiative.",
-      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      date: "19 May 2024",
-      venue: "Rotary Texcity Hall"
-    }
+      title: "LINKEDIN 101",
+      description: "On 10th July 2025, the Rotaract Club of Coimbatore Cosmopolitan, in collaboration with the Rotaract Club of Karpagam Academy of Higher Education (KAHE), conducted an insightful professional development session titled “LinkedIn 101” at the KAHE campus. The session was led by Rtr. PP. Srinath, a Certified District Trainer, and aimed at empowering students with the knowledge and tools to build a strong and purposeful LinkedIn presence.",
+      image: "/events/linkedin101.jpg",
+      date: "10/07/2025",
+      venue: "Karpagam Academy of Higher Education"
+    },
   ];
 
   const handleViewAllEvents = () => {
@@ -57,14 +57,14 @@ const RecentEvents = () => {
           </h2>
         </div>
 
-        {/* Events Grid - 2 columns on mobile, 3 on desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12 md:mb-16">
+        {/* Events Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12 md:mb-16 justify-items-center">
           {events.map((event) => (
             <div
               key={event.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transform hover:scale-105 transition-transform duration-300 ease-out w-full max-w-sm"
             >
-              {/* Event Image with 4:5 aspect ratio */}
+              {/* Event Image */}
               <div className="relative overflow-hidden aspect-[4/5]">
                 <img
                   src={event.image}
@@ -76,7 +76,6 @@ const RecentEvents = () => {
 
               {/* Event Content */}
               <div className="p-3 md:p-4 lg:p-6">
-                {/* Event Title */}
                 <h3 
                   className="text-sm md:text-lg lg:text-xl font-bold mb-2 md:mb-3 tracking-wide leading-tight"
                   style={{ 
@@ -87,7 +86,6 @@ const RecentEvents = () => {
                   {event.title}
                 </h3>
 
-                {/* Event Description */}
                 <p 
                   className="text-xs md:text-sm lg:text-base leading-relaxed mb-3 md:mb-4 line-clamp-3"
                   style={{ 
@@ -98,7 +96,6 @@ const RecentEvents = () => {
                   {event.description}
                 </p>
 
-                {/* Event Details */}
                 <div className="mb-3 md:mb-4 space-y-1">
                   <p 
                     className="text-[10px] md:text-xs lg:text-sm font-light tracking-[0.1em]"
