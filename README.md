@@ -1,4 +1,4 @@
-## 🏗 Tech Stack
+## Tech Stack
 
 - **Framework:** Next.js (React-based)
 - **Styling:** Tailwind CSS
