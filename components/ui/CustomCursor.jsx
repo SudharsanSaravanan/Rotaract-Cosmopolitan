@@ -2,14 +2,14 @@
 import { useState, useEffect, useRef } from 'react'
 
 const CustomCursor = () => {
-  const [targetPos, setTargetPos] = useState({ x: 0, y: 0 })
   const [currentPos, setCurrentPos] = useState({ x: 0, y: 0 })
   const [isVisible, setIsVisible] = useState(false)
+  const targetPosRef = useRef({ x: 0, y: 0 })
   const rafRef = useRef(null)
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      setTargetPos({ x: e.clientX + 6, y: e.clientY + 6 })
+      targetPosRef.current = { x: e.clientX + 6, y: e.clientY + 6 }
       setIsVisible(true)
     }
 
@@ -31,20 +31,22 @@ const CustomCursor = () => {
 
     const animate = () => {
       setCurrentPos((prev) => {
-        const newX = lerp(prev.x, targetPos.x, 0.03) // slower catch-up
-        const newY = lerp(prev.y, targetPos.y, 0.03)
-        return { x: newX, y: newY }
+        const { x: targetX, y: targetY } = targetPosRef.current
+        return {
+          x: lerp(prev.x, targetX, 0.03),
+          y: lerp(prev.y, targetY, 0.03),
+        }
       })
 
       rafRef.current = requestAnimationFrame(animate)
     }
 
-    animate()
+    rafRef.current = requestAnimationFrame(animate)
 
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
     }
-  }, [targetPos])
+  }, [])
 
   return (
     <div

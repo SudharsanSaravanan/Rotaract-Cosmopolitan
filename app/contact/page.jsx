@@ -96,7 +96,7 @@ const ContactPage = () => {
 
   return (
     <Layout>
-    <div className="min-h-screen" style={{ backgroundColor: '#BDB3A3', paddingTop: '35px' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#dadada', paddingTop: '35px' }}>
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
