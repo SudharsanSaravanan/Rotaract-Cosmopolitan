@@ -1,8 +1,10 @@
 'use client';
 import Layout from '@/components/ui/Layout';
-import React from 'react';
+import React, { useState } from 'react';
 
 const EventsPage = () => {
+  const [selectedEvent, setSelectedEvent] = useState(null);
+
   const events = [
     {
       id: 1,
@@ -70,7 +72,7 @@ const EventsPage = () => {
 
   return (
     <Layout>
-      <div className="py-12 md:py-16 px-4" style={{ backgroundColor: '#f8f9fa', paddingTop: '90px' }}>
+      <div className="py-12 md:py-16 px-4" style={{ backgroundColor: '#d8d4c8', paddingTop: '100px' }}>
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12 md:mb-16">
@@ -93,7 +95,8 @@ const EventsPage = () => {
             {sortedEvents.map((event) => (
               <div
                 key={event.id}
-                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transform hover:scale-105 hover:-translate-y-2 transition-transform duration-300 ease-out"
+                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transform hover:scale-105 hover:-translate-y-2 transition-transform duration-300 ease-out cursor-pointer"
+                onClick={() => setSelectedEvent(event)}
               >
                 {/* Event Image */}
                 <div className="relative overflow-hidden aspect-[4/5]">
@@ -140,6 +143,59 @@ const EventsPage = () => {
             ))}
           </div>
         </div>
+
+        {/* Modal Popup */}
+        {selectedEvent && (
+          <div 
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4 py-8 overflow-y-auto"
+            onClick={() => setSelectedEvent(null)}
+          >
+            <div 
+              className="bg-white rounded-lg shadow-2xl w-full max-w-lg relative max-h-[80vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                className="absolute top-2 right-2 w-8 h-8 text-2xl pb-1 flex items-center justify-center 
+                          text-gray-700 hover:text-white bg-gray-300 hover:bg-gray-400 
+                          rounded-full shadow-md transition-all duration-300 z-10"
+                onClick={() => setSelectedEvent(null)}
+              >
+                &times;
+              </button>
+
+              {/* Event Image in Frame */}
+              <div className="relative overflow-hidden aspect-[4/5] mb-4 border-2 border-gray-300 rounded-lg shadow-md">
+                <img
+                  src={selectedEvent.image}
+                  alt={selectedEvent.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Event Details */}
+              <div className="p-6 pt-0">
+                <h3 
+                  className="text-xl md:text-2xl font-bold mb-2"
+                  style={{ fontFamily: "var(--font-aldrich)", color: '#0E141C' }}
+                >
+                  {selectedEvent.title}
+                </h3>
+                <p 
+                  className="text-sm md:text-base leading-relaxed mb-4"
+                  style={{ fontFamily: "var(--font-cantata)", color: '#607EA2' }}
+                >
+                  {selectedEvent.description}
+                </p>
+
+                <div className="text-xs md:text-sm space-y-1">
+                  <p><strong>Date:</strong> {selectedEvent.date}</p>
+                  <p><strong>Venue:</strong> {selectedEvent.venue}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </Layout>
   );
