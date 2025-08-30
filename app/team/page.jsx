@@ -12,46 +12,46 @@ const TeamPage = () => {
     },
     {
       id: 2,
-      name: "Rtr. Amitesh",
-      position: "Secretary - Administration",
-      image: "https://i.pinimg.com/originals/90/c0/51/90c051810494297069df2b6b9a450c15.jpg"
+      name: "Rtr. Shivali G B",
+      position: "Vice President",
+      image: "/team/shivali.jpg"
     },
     {
       id: 3,
-      name: "Rtr. Aravind",
-      position: "Secretary",
-      image: "https://i.pinimg.com/originals/90/c0/51/90c051810494297069df2b6b9a450c15.jpg"
+      name: "Rtr. Amitesh",
+      position: "Secretary - Administration",
+      image: "/team/amitesh.jpg"
     },
     {
       id: 4,
-      name: "Rtr. Bala Kirthikhasan",
-      position: "Immediate Past President",
-      image: "https://i.pinimg.com/originals/90/c0/51/90c051810494297069df2b6b9a450c15.jpg"
+      name: "Rtr. Ajay",
+      position: "Secretary - Communication",
+      image: "/team/ajay.jpg"
     },
     {
       id: 5,
+      name: "Rtr. Bala Abinav S K",
+      position: "All Avenue Chair",
+      image: "/team/abinav.jpg"
+    },
+    {
+      id: 6,
       name: "Rtr. Chandru",
       position: "Treasurer",
       image: "https://i.pinimg.com/originals/90/c0/51/90c051810494297069df2b6b9a450c15.jpg"
     },
     {
-      id: 6,
+      id: 7,
       name: "Rtr. Deepika",
       position: "Event Coordinator",
       image: "https://i.pinimg.com/originals/90/c0/51/90c051810494297069df2b6b9a450c15.jpg"
     },
     {
-      id: 7,
+      id: 8,
       name: "Rtr. Eshwar",
       position: "Public Relations",
       image: "https://i.pinimg.com/originals/90/c0/51/90c051810494297069df2b6b9a450c15.jpg"
     },
-    {
-      id: 8,
-      name: "Rtr. Fathima",
-      position: "Community Service Lead",
-      image: "https://i.pinimg.com/originals/90/c0/51/90c051810494297069df2b6b9a450c15.jpg"
-    }
   ];
 
   return (

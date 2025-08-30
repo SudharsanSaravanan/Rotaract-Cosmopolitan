@@ -10,22 +10,22 @@ const TeamMembers = () => {
     },
     {
       id: 2,
-      name: "Rtr. Amitesh",
-      position: "Secretary - Administration",
-      image: "https://i.pinimg.com/originals/90/c0/51/90c051810494297069df2b6b9a450c15.jpg"
+      name: "Rtr. Shivali G B",
+      position: "Vice President",
+      image: "/team/shivali.jpg"
     },
     {
       id: 3,
-      name: "Rtr. Aravind",
-      position: "Secretary",
-      image: "https://i.pinimg.com/originals/90/c0/51/90c051810494297069df2b6b9a450c15.jpg"
+      name: "Rtr. Amitesh",
+      position: "Secretary - Administration",
+      image: "/team/amitesh.jpg"
     },
     {
       id: 4,
-      name: "Rtr. Bala Kirthikhasan",
-      position: "Immediate Past President",
-      image: "https://i.pinimg.com/originals/90/c0/51/90c051810494297069df2b6b9a450c15.jpg"
-    }
+      name: "Rtr. Ajay",
+      position: "Secretary - Communication",
+      image: "/team/ajay.jpg"
+    },
   ];
 
   const handleViewMore = () => {
