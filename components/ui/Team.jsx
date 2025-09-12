@@ -2,12 +2,12 @@ import React from 'react';
 
 const TeamMembers = () => {
   const teamMembers = [
-    {
+    /*{
       id: 1,
       name: "Rtr. Akhil",
       position: "President",
       image: "https://i.pinimg.com/originals/90/c0/51/90c051810494297069df2b6b9a450c15.jpg"
-    },
+    },*/
     {
       id: 2,
       name: "Rtr. Shivali G B",
@@ -25,6 +25,12 @@ const TeamMembers = () => {
       name: "Rtr. Ajay",
       position: "Secretary - Communication",
       image: "/team/ajay.jpg"
+    },
+    {
+      id: 5,
+      name: "Rtr. Bala Abinav S K",
+      position: "All Avenue Chair",
+      image: "/team/abinav.jpg"
     },
   ];
 
