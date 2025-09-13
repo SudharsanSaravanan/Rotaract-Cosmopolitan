@@ -4,54 +4,42 @@ import React from 'react';
 
 const TeamPage = () => {
   const teamMembers = [
-    /*{
+    {
       id: 1,
-      name: "Rtr. Akhil",
-      position: "President",
-      image: "https://i.pinimg.com/originals/90/c0/51/90c051810494297069df2b6b9a450c15.jpg"
-    },*/
+      name: "Rtr. Balakirthikhasan R",
+      position: "Immediate Past President",
+      image: "/team/bala-k.png"
+    },
     {
       id: 2,
-      name: "Rtr. Shivali G B",
-      position: "Vice President",
-      image: "/team/shivali.jpg"
+      name: "Rtr. Akhil S",
+      position: "President",
+      image: "/team/akhil.png"
     },
     {
       id: 3,
-      name: "Rtr. Amitesh",
-      position: "Secretary - Administration",
-      image: "/team/amitesh.jpg"
+      name: "Rtr. Shivali G B",
+      position: "Vice President",
+      image: "/team/shivali.png"
     },
     {
       id: 4,
-      name: "Rtr. Ajay",
-      position: "Secretary - Communication",
-      image: "/team/ajay.jpg"
+      name: "Rtr. Amitesh A",
+      position: "Secretary - Administration",
+      image: "/team/amitesh.png"
     },
     {
       id: 5,
-      name: "Rtr. Bala Abinav S K",
-      position: "All Avenue Chair",
-      image: "/team/abinav.jpg"
+      name: "Rtr. Ajay B S",
+      position: "Secretary - Communication",
+      image: "/team/ajay.png"
     },
-    /*{
+    {
       id: 6,
-      name: "Rtr. Chandru",
+      name: "Rtr. Soorya S",
       position: "Treasurer",
-      image: "https://i.pinimg.com/originals/90/c0/51/90c051810494297069df2b6b9a450c15.jpg"
+      image: "/team/soorya.png"
     },
-    {
-      id: 7,
-      name: "Rtr. Deepika",
-      position: "Event Coordinator",
-      image: "https://i.pinimg.com/originals/90/c0/51/90c051810494297069df2b6b9a450c15.jpg"
-    },
-    {
-      id: 8,
-      name: "Rtr. Eshwar",
-      position: "Public Relations",
-      image: "https://i.pinimg.com/originals/90/c0/51/90c051810494297069df2b6b9a450c15.jpg"
-    },*/
   ];
 
   return (
