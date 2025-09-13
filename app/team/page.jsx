@@ -6,33 +6,33 @@ const TeamPage = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Rtr. Balakirthikhasan R",
-      position: "Immediate Past President",
-      image: "/team/bala-k.png"
-    },
-    {
-      id: 2,
       name: "Rtr. Akhil S",
       position: "President",
       image: "/team/akhil.png"
     },
     {
-      id: 3,
-      name: "Rtr. Shivali G B",
-      position: "Vice President",
-      image: "/team/shivali.png"
-    },
-    {
-      id: 4,
+      id: 2,
       name: "Rtr. Amitesh A",
       position: "Secretary - Administration",
       image: "/team/amitesh.png"
     },
     {
-      id: 5,
+      id: 3,
       name: "Rtr. Ajay B S",
       position: "Secretary - Communication",
       image: "/team/ajay.png"
+    },
+    {
+      id: 4,
+      name: "Rtr. Shivali G B",
+      position: "Vice President",
+      image: "/team/shivali.png"
+    },
+    {
+      id: 5,
+      name: "Rtr. Balakirthikhasan R",
+      position: "Immediate Past President",
+      image: "/team/bala-k.png"
     },
     {
       id: 6,
