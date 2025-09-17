@@ -1,13 +1,9 @@
 "use client";
 const announcements = [
-  "We are proud and happy to announce that our team for the year 2025–26 has won the bid to host DEWS – District Editorial Workshop and Seminar!",
-  "Registrations for our next major event open soon! Stay tuned for more details and registration links.",
   "New bulletin release coming up this weekend — check the updates section for the latest club news.",
   "Community service project at local school this weekend — volunteers welcome to join us.",
-  "Blood donation camp scheduled for next Friday at district office — make a difference in someone's life.",
-  "Professional development workshop on leadership skills next month — enhance your career prospects.",
-  "Annual fundraising gala planning committee meeting scheduled for this Thursday evening.",
-  "Environmental awareness campaign launch next week — join us in making our city greener.",
+  "The installation was a great hit — thank you to everyone who joined and supported the event.",
+  "Announcing our new President: Rtr. Akhil S for the Rotaract Club of Coimbatore Cosmopolitan."
 ];
 
 export default function AnnouncementsCarousel() {
