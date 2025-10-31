@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rotaractcosmopolitan.com/sitemap.xml
-Host: https://rotaractcosmopolitan.com
+Sitemap: https://rotaractcbecosmopolitan.com/sitemap.xml
+Host: https://rotaractcbecosmopolitan.com
