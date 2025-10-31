@@ -149,7 +149,7 @@ const AboutPage = () => {
                     className="font-semibold text-sm tracking-widest"
                     style={{ fontFamily: 'var(--font-aldrich)' }}
                   >
-                    JOIN OUR MISSION
+                    JOIN US
                   </span>
                 </button>
               </a>
