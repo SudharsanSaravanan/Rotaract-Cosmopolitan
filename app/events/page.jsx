@@ -1,6 +1,7 @@
 'use client';
 import Layout from '@/components/ui/Layout';
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const EventsPage = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -12,7 +13,7 @@ const EventsPage = () => {
       description: "CONE-VERSATIONS was an intelligently selected club service activity aimed at thawing the ice between new and old members at the beginning of the Rotaract year. Organized at Boomerang, VOC Park, the activity drew a casual, informal atmosphere for members to mingle, interact, and initiate quality conversations — all because of a love for fun, games, and most importantly, ice cream.",
       image: "/events/cone-versations.jpg",
       date: "05/07/2025",
-      venue: 'BOOMERANG (VOC PARK)'
+      venue: "BOOMERANG (VOC PARK)"
     },
     {
       id: 2,
@@ -56,7 +57,7 @@ const EventsPage = () => {
     }
   ];
 
-  // ✅ Parse different date formats safely
+  // ✅ Parse dates safely
   const parseDate = (dateStr) => {
     if (/\d{2}\/\d{2}\/\d{4}/.test(dateStr)) {
       const [day, month, year] = dateStr.split("/");
@@ -65,7 +66,7 @@ const EventsPage = () => {
     return new Date(dateStr.replace(/(\d+)(st|nd|rd|th)/, "$1"));
   };
 
-  // ✅ Sort events by latest date
+  // ✅ Sort events (latest first)
   const sortedEvents = [...events].sort(
     (a, b) => parseDate(b.date) - parseDate(a.date)
   );
@@ -76,13 +77,13 @@ const EventsPage = () => {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12 md:mb-16">
-            <p 
+            <p
               className="text-sm md:text-md font-light tracking-[0.3em] uppercase mb-6"
               style={{ fontFamily: "var(--font-cantata)", color: '#314B6E' }}
             >
               What's Happening
             </p>
-            <h2 
+            <h2
               className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-wide"
               style={{ fontFamily: "var(--font-aldrich)", color: '#0E141C' }}
             >
@@ -100,24 +101,27 @@ const EventsPage = () => {
               >
                 {/* Event Image */}
                 <div className="relative overflow-hidden aspect-[4/5]">
-                  <img
+                  <Image
                     src={event.image}
                     alt={event.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
 
                 {/* Event Content */}
                 <div className="p-3 md:p-4 lg:p-6">
-                  <h3 
+                  <h3
                     className="text-sm md:text-lg lg:text-xl font-bold mb-2 md:mb-3 tracking-wide leading-tight"
                     style={{ fontFamily: "var(--font-aldrich)", color: '#0E141C' }}
                   >
                     {event.title}
                   </h3>
 
-                  <p 
+                  <p
                     className="text-xs md:text-sm lg:text-base leading-relaxed mb-3 md:mb-4 line-clamp-3"
                     style={{ fontFamily: "var(--font-cantata)", color: '#607EA2' }}
                   >
@@ -125,13 +129,13 @@ const EventsPage = () => {
                   </p>
 
                   <div className="mb-3 md:mb-4 space-y-1">
-                    <p 
+                    <p
                       className="text-[10px] md:text-xs lg:text-sm font-light tracking-[0.1em]"
                       style={{ fontFamily: "var(--font-cantata)", color: '#314B6E' }}
                     >
                       <span className="font-medium">Date:</span> {event.date}
                     </p>
-                    <p 
+                    <p
                       className="text-[10px] md:text-xs lg:text-sm font-light tracking-[0.1em]"
                       style={{ fontFamily: "var(--font-cantata)", color: '#314B6E' }}
                     >
@@ -146,11 +150,11 @@ const EventsPage = () => {
 
         {/* Modal Popup */}
         {selectedEvent && (
-          <div 
+          <div
             className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4 py-8 overflow-y-auto"
             onClick={() => setSelectedEvent(null)}
           >
-            <div 
+            <div
               className="bg-white rounded-lg shadow-2xl w-full max-w-lg relative max-h-[80vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
@@ -164,24 +168,26 @@ const EventsPage = () => {
                 &times;
               </button>
 
-              {/* Event Image in Frame */}
+              {/* Event Image */}
               <div className="relative overflow-hidden aspect-[4/5] mb-4 border-2 border-gray-300 rounded-lg shadow-md">
-                <img
+                <Image
                   src={selectedEvent.image}
                   alt={selectedEvent.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
                 />
               </div>
 
               {/* Event Details */}
               <div className="p-6 pt-0">
-                <h3 
+                <h3
                   className="text-xl md:text-2xl font-bold mb-2"
                   style={{ fontFamily: "var(--font-aldrich)", color: '#0E141C' }}
                 >
                   {selectedEvent.title}
                 </h3>
-                <p 
+                <p
                   className="text-sm md:text-base leading-relaxed mb-4"
                   style={{ fontFamily: "var(--font-cantata)", color: '#607EA2' }}
                 >

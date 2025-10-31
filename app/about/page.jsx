@@ -1,6 +1,7 @@
 'use client';
 import Layout from '@/components/ui/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 import React from 'react';
 
 const AboutPage = () => {
@@ -48,16 +49,19 @@ const AboutPage = () => {
           {/* Image Frame Top */}
           <div className="max-w-4xl mx-auto mb-16">
             <div 
-              className="aspect-[16/9] rounded-2xl overflow-hidden shadow-xl border"
+              className="aspect-[16/9] rounded-2xl overflow-hidden shadow-xl border relative"
               style={{
                 backgroundColor: 'rgba(122, 111, 94, 0.1)',
                 borderColor: '#7A6F5E'
               }}
             >
-              <img 
+              <Image 
                 src="/about/boomrang1.jpg"
-                alt="Rotaract Club Community Service"
+                alt="Rotaract Club community service event"
+                width={1280}
+                height={720}
                 className="w-full h-full object-cover"
+                priority
               />
             </div>
           </div>
