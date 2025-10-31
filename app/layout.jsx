@@ -19,7 +19,7 @@ export const metadata = {
     title: 'Rotaract Club of Coimbatore Cosmopolitan',
     description:
       'Discover our initiatives, projects, and events at the Rotaract Club of Coimbatore Cosmopolitan.',
-    url: 'https://rotaractcosmopolitan.com',
+    url: 'https://rotaractcbecosmopolitan.com',
     siteName: 'Rotaract Cosmopolitan',
     images: [
       {
