@@ -63,7 +63,7 @@ const AboutSection = () => {
             <div>
               <Link
                 href="/about"
-                aria-label="Read more about the Rotaract Club of Coimbatore Cosmopolitan"
+                aria-label="Learn more about the Rotaract Club of Coimbatore Cosmopolitan"
                 className="inline-flex items-center px-6 py-3 rounded-2xl shadow-lg border border-white/30 
                 bg-white/10 hover:bg-white/20 backdrop-blur-md 
                 transition-all duration-300"
@@ -72,7 +72,7 @@ const AboutSection = () => {
                   className="font-semibold mr-3 text-sm md:text-base"
                   style={{ fontFamily: "var(--font-aldrich)", color: "#0E141C" }}
                 >
-                  READ MORE
+                  Learn More About Us
                 </span>
                 <svg
                   className="w-5 h-5"
