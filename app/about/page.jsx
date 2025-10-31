@@ -143,6 +143,7 @@ const AboutPage = () => {
             <div className="pt-4">
               <Link
                 href="/contact"
+                aria-label="Join the Rotaract Club of Coimbatore Cosmopolitan"
                 className="inline-block px-8 py-4 rounded-lg border-2 transition-all duration-300 hover:scale-105 font-semibold text-sm tracking-widest"
                 style={{
                   backgroundColor: 'transparent',
