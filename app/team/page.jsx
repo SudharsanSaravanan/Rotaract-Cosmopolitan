@@ -111,7 +111,25 @@ const TeamPage = () => {
       name: "Rtr. Anushka R A",
       position: "Community Service Director",
       image: "/team/anushka.png"
-    }
+    },
+    {
+      id: 19,
+      name: "Rtr. Arjun Krishna R",
+      position: "Sergeant at Arms & Chief Editor",
+      image: "/team/arjun.png"
+    },
+    {
+      id: 20,
+      name: "Rtr. Bala Abinav S K",
+      position: "All Avenue Chair",
+      image: "/team/bala-abinav.png"
+    },
+    {
+      id: 21,
+      name: "Rtr. Aravind H",
+      position: "Club Service Director",
+      image: "/team/aravind.png"
+    },
   ];
 
   return (
