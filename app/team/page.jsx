@@ -44,73 +44,73 @@ const TeamPage = () => {
       id: 7,
       name: "Rtr. PP Farhan",
       position: "Mentor",
-      image: "/team/farhan.jpg"
+      image: "/team/farhan.png"
     },
     {
       id: 8,
       name: "Rtr. Faiz Ishak Jamal",
       position: "International Service",
-      image: "/team/faiz.jpg"
+      image: "/team/faiz.png"
     },
     {
       id: 9,
       name: "Rtr. Manjari M V",
       position: "Professional Service Director",
-      image: "/team/manjari.jpg"
+      image: "/team/manjari.png"
     },
     {
       id: 10,
       name: "Rtr. Sudharsana Saravanan S",
       position: "Tech Lead",
-      image: "/team/sudharsan.jpg"
+      image: "/team/sudharsan.png"
     },
     {
       id: 11,
       name: "Rtr. Keerthana R",
       position: "Public Image Chair",
-      image: "/team/keerthana.jpg"
+      image: "/team/keerthana.png"
     },
     {
       id: 12,
       name: "Rtr. Akshaya B",
       position: "DPP Chair",
-      image: "/team/akshaya-b.jpg"
+      image: "/team/akshaya-b.png"
     },
     {
       id: 13,
       name: "Rtr. Ajaykumar J",
       position: "Young Leaders Contact",
-      image: "/team/ajaykumar.jpg"
+      image: "/team/ajaykumar.png"
     },
     {
       id: 14,
       name: "Rtr. Harine Priyaa",
       position: "Club Foundation Chair",
-      image: "/team/harine.jpg"
+      image: "/team/harine.png"
     },
     {
       id: 15,
       name: "Rtr. Anush Adithyaa S",
       position: "Blood Donor Cell",
-      image: "/team/anush.jpg"
+      image: "/team/anush.png"
     },
     {
       id: 16,
       name: "Rtr. Akelesh K B",
       position: "Club Membership Chair",
-      image: "/team/akelesh.jpg"
+      image: "/team/akelesh.png"
     },
     {
       id: 17,
       name: "Rtr. Narmadha M",
       position: "Rotaract Learning Facilitator",
-      image: "/team/narmadha.jpg"
+      image: "/team/narmadha.png"
     },
     {
       id: 18,
       name: "Rtr. Anushka R A",
       position: "Community Service Director",
-      image: "/team/anushka.jpg"
+      image: "/team/anushka.png"
     }
   ];
 

@@ -118,7 +118,7 @@ export default function InnovationBanner() {
       {/* Robot Hand (Top, Right) */}
       <Image
         ref={robotHandRef}
-        src="/Images/robot_hand_alpha.png"
+        src="/gsap/robot_hand_alpha.png"
         alt="Robot Hand"
         width={200}
         height={150}
@@ -132,7 +132,7 @@ export default function InnovationBanner() {
       {/* Human Hand (Bottom, Left) */}
       <Image
         ref={humanHandRef}
-        src="/Images/human_hand_alpha.png"
+        src="/gsap/human_hand_alpha.png"
         alt="Human Hand"
         width={200}
         height={150}
