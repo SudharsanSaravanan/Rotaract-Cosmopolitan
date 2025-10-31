@@ -1,5 +1,7 @@
 // app/sitemap.js
 
+export const dynamic = 'force-static' // 👈 This line fixes the static export error
+
 export default async function sitemap() {
   const baseUrl = 'https://rotaractcosmopolitan.com'
 
