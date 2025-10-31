@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 import { gsap } from 'gsap'
 
 const HeroBanner = () => {
@@ -81,10 +82,16 @@ const HeroBanner = () => {
       </div>
 
       {/* Main Heading & Caption */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4" style={{ paddingTop: 'calc(40vh - 100px)' }}>
+      <div
+        className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4"
+        style={{ paddingTop: 'calc(40vh - 100px)' }}
+      >
         {/* Minimal Welcome */}
         <div className="mb-2 md:mb-3">
-          <p className="text-white/80 text-sm md:text-base font-light tracking-[0.15em] uppercase" style={{ fontFamily: 'var(--font-cantata)' }}>
+          <p
+            className="text-white/80 text-sm md:text-base font-light tracking-[0.15em] uppercase"
+            style={{ fontFamily: 'var(--font-cantata)' }}
+          >
             Welcome to
           </p>
           <div className="w-12 h-px bg-white/40 mx-auto mt-1"></div>
@@ -92,64 +99,84 @@ const HeroBanner = () => {
 
         {/* Rotaract Club Of Coimbatore */}
         <div className="mb-1 md:mb-0">
-          <p className="text-cyan-100 text-base md:text-2xl lg:text-3xl font-light tracking-[0.2em] uppercase opacity-95" style={{ fontFamily: 'var(--font-aldrich)' }}>
+          <p
+            className="text-cyan-100 text-base md:text-2xl lg:text-3xl font-light tracking-[0.2em] uppercase opacity-95"
+            style={{ fontFamily: 'var(--font-aldrich)' }}
+          >
             ROTARACT CLUB OF COIMBATORE
           </p>
         </div>
 
         {/* Main Title - COSMOPOLITAN */}
-        <h1 className="text-white text-[40px] sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-[0.05em] uppercase leading-tight mb-2 md:mb-4 drop-shadow-2xl" style={{ fontFamily: 'var(--font-aldrich)' }}>
+        <h1
+          className="text-white text-[40px] sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-[0.05em] uppercase leading-tight mb-2 md:mb-4 drop-shadow-2xl"
+          style={{ fontFamily: 'var(--font-aldrich)' }}
+        >
           COSMOPOLITAN
         </h1>
 
-        {/* Clean Info Row */}
+        {/* Info Row */}
         <div className="flex items-center justify-center gap-4 md:gap-6 mb-2 md:mb-4">
           <div className="flex items-center gap-2">
             <div className="w-1 h-1 bg-white rounded-full"></div>
-            <p className="text-white/90 text-sm font-light tracking-wide" style={{ fontFamily: 'var(--font-cantata)' }}>
+            <p
+              className="text-white/90 text-sm font-light tracking-wide"
+              style={{ fontFamily: 'var(--font-cantata)' }}
+            >
               Group 5
             </p>
           </div>
-          
+
           <div className="w-px h-4 bg-white/30"></div>
-          
+
           <div className="flex items-center gap-2">
             <div className="w-1 h-1 bg-white rounded-full"></div>
-            <p className="text-white/90 text-sm font-light tracking-wide" style={{ fontFamily: 'var(--font-cantata)' }}>
+            <p
+              className="text-white/90 text-sm font-light tracking-wide"
+              style={{ fontFamily: 'var(--font-cantata)' }}
+            >
               District 3206
             </p>
           </div>
-          
+
           <div className="w-px h-4 bg-white/30"></div>
-          
+
           <div className="flex items-center gap-2">
             <div className="w-1 h-1 bg-white rounded-full"></div>
-            <p className="text-white/90 text-sm font-light tracking-wide" style={{ fontFamily: 'var(--font-cantata)' }}>
+            <p
+              className="text-white/90 text-sm font-light tracking-wide"
+              style={{ fontFamily: 'var(--font-cantata)' }}
+            >
               Est. 2014
             </p>
           </div>
         </div>
 
         <div ref={textRef} className="mt-4 max-w-2xl">
-          <p className="text-white text-base sm:text-lg" style={{ fontFamily: 'var(--font-cantata)' }}>
+          <p
+            className="text-white text-base sm:text-lg"
+            style={{ fontFamily: 'var(--font-cantata)' }}
+          >
             {slides[currentSlide].caption}
           </p>
         </div>
       </div>
 
-      {/* 🔄 Extra Spinning Logo Bottom Right */}
+      {/* 🔄 Rotating Logo (Next.js <Image>) */}
       <div
-        className="absolute z-20 animate-spin-slow
-                  right-[1rem] bottom-[1rem]
-                  md:right-[1.2rem] md:bottom-[1.2rem]"
+        className="hidden md:block absolute z-20 animate-spin-slow right-6 bottom-6"
       >
-        <img
-          src="/logo/white-wheel-logo.png"
-          alt="spin 2"
-          className="w-0 md:w-15 aspect-square object-contain opacity-100 hover:opacity-100 transition duration-500"
-        />
+        <div className="relative w-12 h-12 md:w-16 md:h-16">
+          <Image
+            src="/logo/white-wheel-logo.png"
+            alt="Rotaract wheel logo spinning"
+            fill
+            priority
+            className="object-contain opacity-100 hover:opacity-100 transition duration-500"
+            sizes="64px"
+          />
+        </div>
       </div>
-
 
       {/* 🌟 Floating Glowing Orb (spinning via GSAP) */}
       <div className="absolute top-32 right-24 z-10" ref={orbRef}>

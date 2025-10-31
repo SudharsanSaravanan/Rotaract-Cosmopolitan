@@ -1,12 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 const AboutSection = () => {
   return (
     <section className="min-h-screen flex items-center bg-gradient-to-br from-[#8197AC] via-[#a4b5c4] to-[#BFCBD9]">
       <div className="container mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-          
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
@@ -58,10 +59,11 @@ const AboutSection = () => {
               </p>
             </div>
 
-            {/* Button */}
+            {/* Accessible Button Link */}
             <div>
-              <a
+              <Link
                 href="/about"
+                aria-label="Read more about the Rotaract Club of Coimbatore Cosmopolitan"
                 className="inline-flex items-center px-6 py-3 rounded-2xl shadow-lg border border-white/30 
                 bg-white/10 hover:bg-white/20 backdrop-blur-md 
                 transition-all duration-300"
@@ -85,7 +87,7 @@ const AboutSection = () => {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           </motion.div>
 
@@ -97,11 +99,14 @@ const AboutSection = () => {
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/40 hover:scale-105 transform transition-all duration-500">
-              <img
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/40 hover:scale-105 transform transition-all duration-500 w-full max-w-md aspect-[4/3]">
+              <Image
                 src="/about/greedam_cosmo1.jpg"
-                alt="Rotaract Club"
-                className="w-full h-full object-cover"
+                alt="Members of the Rotaract Club of Coimbatore Cosmopolitan"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+                priority
               />
               <div className="absolute inset-0 bg-black/25"></div>
             </div>

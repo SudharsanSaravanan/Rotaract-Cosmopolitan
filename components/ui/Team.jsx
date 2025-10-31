@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const TeamMembers = () => {
   const teamMembers = [
@@ -33,13 +34,19 @@ const TeamMembers = () => {
   };
 
   return (
-    <div className="py-16 px-4" style={{ background: 'linear-gradient(135deg, #0E141C 0%, #314B6E 50%, #607EA2 100%)' }}>
+    <div
+      className="py-16 px-4"
+      style={{
+        background:
+          'linear-gradient(135deg, #0E141C 0%, #314B6E 50%, #607EA2 100%)',
+      }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 
+          <h1
             className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-wide"
-            style={{ fontFamily: "var(--font-aldrich)" }}
+            style={{ fontFamily: 'var(--font-aldrich)' }}
           >
             TEAM MEMBERS
           </h1>
@@ -53,25 +60,30 @@ const TeamMembers = () => {
               className="group flex flex-col bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 rounded-lg overflow-hidden"
             >
               {/* Image with 4:5 Aspect Ratio */}
-              <div className="w-full aspect-[4/5] overflow-hidden">
-                <img
+              <div className="w-full aspect-[4/5] overflow-hidden relative">
+                <Image
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover group-hover:opacity-80 transition-opacity duration-300"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  className="object-cover group-hover:opacity-80 transition-opacity duration-300"
                 />
               </div>
 
               {/* Member Info */}
-              <div className="p-3 text-center flex-grow" style={{ backgroundColor: 'rgba(0, 0, 50, 0.7)' }}>
-                <h3 
+              <div
+                className="p-3 text-center flex-grow"
+                style={{ backgroundColor: 'rgba(0, 0, 50, 0.7)' }}
+              >
+                <h3
                   className="text-sm md:text-lg lg:text-xl font-bold text-white mb-1 tracking-wide"
-                  style={{ fontFamily: "var(--font-aldrich)" }}
+                  style={{ fontFamily: 'var(--font-aldrich)' }}
                 >
                   {member.name}
                 </h3>
-                <p 
+                <p
                   className="text-white/70 text-[10px] md:text-sm lg:text-sm font-light tracking-[0.1em] uppercase"
-                  style={{ fontFamily: "var(--font-cantata)" }}
+                  style={{ fontFamily: 'var(--font-cantata)' }}
                 >
                   {member.position}
                 </p>
@@ -82,10 +94,10 @@ const TeamMembers = () => {
 
         {/* View More Button */}
         <div className="text-center">
-          <button 
+          <button
             onClick={handleViewMore}
             className="group relative px-4 md:px-6 lg:px-8 py-1 md:py-2 lg:py-3 bg-transparent border border-white/30 hover:border-white/60 text-white hover:bg-white/5 transition-all duration-300 tracking-[0.2em] uppercase rounded-lg"
-            style={{ fontFamily: "var(--font-cantata)" }}
+            style={{ fontFamily: 'var(--font-cantata)' }}
           >
             <span className="text-xs md:text-sm lg:text-base font-light">
               View More
