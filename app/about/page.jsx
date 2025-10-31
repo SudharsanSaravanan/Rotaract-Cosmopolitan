@@ -1,5 +1,6 @@
 'use client';
 import Layout from '@/components/ui/Layout';
+import Link from 'next/link';
 import React from 'react';
 
 const AboutPage = () => {
@@ -140,19 +141,18 @@ const AboutPage = () => {
 
             {/* CTA */}
             <div className="pt-4">
-              <a href="/contact">
-                <button 
-                  className="px-8 py-4 rounded-lg border-2 transition-all duration-300 hover:scale-105"
-                  style={{ backgroundColor: 'transparent', borderColor: '#7A6F5E', color: '#0E141C' }}
-                >
-                  <span 
-                    className="font-semibold text-sm tracking-widest"
-                    style={{ fontFamily: 'var(--font-aldrich)' }}
-                  >
-                    JOIN US
-                  </span>
-                </button>
-              </a>
+              <Link
+                href="/contact"
+                className="inline-block px-8 py-4 rounded-lg border-2 transition-all duration-300 hover:scale-105 font-semibold text-sm tracking-widest"
+                style={{
+                  backgroundColor: 'transparent',
+                  borderColor: '#7A6F5E',
+                  color: '#0E141C',
+                  fontFamily: 'var(--font-aldrich)',
+                }}
+              >
+                Join Us
+              </Link>
             </div>
           </div>
 
