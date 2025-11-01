@@ -113,7 +113,7 @@ export default function InnovationBanner() {
     <section
       ref={bannerRef}
       className="relative w-full h-[40vh] sm:h-[70vh] flex items-center justify-center overflow-hidden px-4 mx-auto bg-[#101924] text-white"
-      style={{ minHeight: "40vh" }} // Ensures height doesn't collapse on scroll back
+      style={{ minHeight: "45vh" }} // Ensures height doesn't collapse on scroll back
     >
       {/* Robot Hand (Top, Right) */}
       <Image

@@ -44,8 +44,8 @@ export const metadata = {
     images: [
       {
         url: '/og-image.jpg',
-        width: 823,
-        height: 811,
+        width: 967,
+        height: 967,
         alt: 'Rotaract Cosmopolitan - Coimbatore',
       },
     ],
