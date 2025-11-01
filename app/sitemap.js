@@ -1,7 +1,7 @@
 export const dynamic = 'force-static'
 
 export default async function sitemap() {
-  const baseUrl = 'https://rotaract-cbe-cosmopolitan.vercel.app'
+  const baseUrl = 'https://www.rotaractcbecosmopolitan.in'
 
   return [
     {
