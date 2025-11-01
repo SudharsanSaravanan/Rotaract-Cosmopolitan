@@ -1,0 +1,19 @@
+{
+  "name": "Rotaract Club of Coimbatore Cosmopolitan",
+  "short_name": "Rotaract Cosmopolitan",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#8B0000",
+  "description": "Official website of the Rotaract Club of Coimbatore Cosmopolitan — empowering youth through service, leadership, and impactful community initiatives.",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "256x256 128x128 64x64 32x32 16x16",
+      "type": "image/x-icon",
+      "purpose": "any"
+    }
+  ]
+}
