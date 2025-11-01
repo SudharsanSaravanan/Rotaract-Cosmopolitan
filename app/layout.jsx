@@ -9,6 +9,7 @@ export const metadata = {
     'Official website of the Rotaract Club of Coimbatore Cosmopolitan — empowering youth through service, leadership, and community initiatives.',
   keywords:
     'Rotaract Coimbatore, Rotaract Club, Rotary International, Coimbatore Cosmopolitan, youth leadership, community service, Rotaract CBE, Rotaract Cosmopolitan Coimbatore',
+
   metadataBase: new URL('https://www.rotaractcbecosmopolitan.in'),
 
   alternates: {
@@ -27,14 +28,20 @@ export const metadata = {
     },
   },
 
+  // ✅ Complete favicon and manifest setup
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
     shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
   },
 
   manifest: '/site.webmanifest',
 
+  // ✅ Open Graph for social media
   openGraph: {
     title: 'Rotaract Club of Coimbatore Cosmopolitan',
     description:
@@ -44,8 +51,8 @@ export const metadata = {
     images: [
       {
         url: '/og-image.jpg',
-        width: 967,
-        height: 967,
+        width: 1200,
+        height: 630,
         alt: 'Rotaract Cosmopolitan - Coimbatore',
       },
     ],
@@ -53,6 +60,7 @@ export const metadata = {
     type: 'website',
   },
 
+  // ✅ Twitter Card meta
   twitter: {
     card: 'summary_large_image',
     title: 'Rotaract Club of Coimbatore Cosmopolitan',
@@ -67,19 +75,20 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  // ✅ Structured data for SEO
   const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Rotaract Club of Coimbatore Cosmopolitan",
-    url: "https://www.rotaractcbecosmopolitan.in",
-    logo: "https://www.rotaractcbecosmopolitan.in/favicon.ico",
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Rotaract Club of Coimbatore Cosmopolitan',
+    url: 'https://www.rotaractcbecosmopolitan.in',
+    logo: 'https://www.rotaractcbecosmopolitan.in/favicon.ico',
     sameAs: [
-      "https://www.instagram.com/rac_cbe_cosmopolitan/",
-      "https://www.linkedin.com/company/rotaract-club-of-coimbatore-cosmopolitan/",
-      "https://www.facebook.com/coimbatorecosmopolitan.coimbatorecosmopolitan.9/",
+      'https://www.instagram.com/rac_cbe_cosmopolitan/',
+      'https://www.linkedin.com/company/rotaract-club-of-coimbatore-cosmopolitan/',
+      'https://www.facebook.com/coimbatorecosmopolitan.coimbatorecosmopolitan.9/',
     ],
     description:
-      "Official website of the Rotaract Club of Coimbatore Cosmopolitan — empowering youth through service, leadership, and community initiatives.",
+      'Official website of the Rotaract Club of Coimbatore Cosmopolitan — empowering youth through service, leadership, and community initiatives.',
   }
 
   return (
@@ -94,19 +103,22 @@ export default function RootLayout({ children }) {
         {/* ✅ JSON-LD Organization Schema */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
         />
 
         {/* ✅ Backup robots meta tag */}
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
-        {/* ✅ Sitemap and Robots for discoverability */}
+        {/* ✅ Sitemap and Robots links for Googlebot */}
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         <link rel="robots" href="/robots.txt" />
 
         {/* ✅ Humans.txt reference */}
         <link rel="author" href="/humans.txt" />
       </head>
+
       <body className={inter.className}>{children}</body>
     </html>
   )
