@@ -2,7 +2,7 @@
 
 import Layout from "@/components/ui/Layout";
 import HeroBanner from "@/components/ui/HeroBanner";
-import InnovationBanner from "@/components/ui/InnovationBanner"; // Import the new component
+import InnovationBanner from "@/components/ui/InnovationBanner";
 import AnnouncementsCarousel from "@/components/ui/Announcements";
 import AboutSection from "@/components/ui/AboutUs";
 import TeamMembers from "@/components/ui/Team";
@@ -11,19 +11,41 @@ import RecentEvents from "@/components/ui/RecentEvents";
 import WhyJoinUs from "@/components/ui/WhyJoinUs";
 import FAQ from "@/components/ui/Faq";
 
-export default function Home() {
+// ✅ Structured Data (JSON-LD for SEO)
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Rotaract Club of Coimbatore Cosmopolitan",
+  url: "https://rotaract-cbe-cosmopolitan.vercel.app",
+  logo: "https://rotaract-cbe-cosmopolitan.vercel.app/favicon.ico",
+  sameAs: [
+    "https://www.instagram.com/rac_cbe_cosmopolitan/",
+    "https://www.linkedin.com/company/rotaract-club-of-coimbatore-cosmopolitan/",
+    "https://www.facebook.com/coimbatorecosmopolitan.coimbatorecosmopolitan.9/",
+  ],
+  description:
+    "Official website of the Rotaract Club of Coimbatore Cosmopolitan — empowering youth through service, leadership, and community initiatives.",
+};
 
+export default function Home() {
   return (
     <Layout>
+      {/* ✅ Add JSON-LD Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
+      {/* ✅ Main Page Content */}
       <HeroBanner />
-      <AnnouncementsCarousel/>
-      <AboutSection/>
+      <AnnouncementsCarousel />
+      <AboutSection />
       <TeamMembers />
       <InnovationBanner />
-      <StatsCounter/>
+      <StatsCounter />
       <WhyJoinUs />
       <RecentEvents />
-      <FAQ/>
+      <FAQ />
     </Layout>
   );
 }

@@ -1,0 +1,32 @@
+/* TEAM */
+Developer: Sudharsana Saravanan S
+Role: Tech Lead
+Website: https://rotaract-cbe-cosmopolitan.vercel.app
+GitHub: https://github.com/SudharsanSaravanan
+LinkedIn: https://www.linkedin.com/in/sudharsana-saravanan-s-456544299/
+Location: Coimbatore, India
+
+/* ORGANIZATION */
+Organization: Rotaract Club of Coimbatore Cosmopolitan
+Affiliation: Rotary International
+Website: https://rotaract-cbe-cosmopolitan.vercel.app
+Established: August 10, 2014
+Focus: Youth Leadership, Community Service, Professional Development
+
+/* SITE */
+Last Update: November 2025
+Standards: HTML5, CSS3, JavaScript (Next.js 15)
+Frameworks: Tailwind CSS, Framer Motion, Shadcn/UI
+Hosting: Vercel
+Language: English (en-IN)
+Doctype: HTML5
+
+/* CONTACT */
+Email: rac.cbe.cosmopolitan@gmail.com
+Instagram: https://www.instagram.com/rac_cbe_cosmopolitan/
+LinkedIn: https://www.linkedin.com/company/rotaract-club-of-coimbatore-cosmopolitan/
+Facebook: https://www.facebook.com/coimbatorecosmopolitan.coimbatorecosmopolitan.9/
+
+/* MISSION */
+Empowering youth through leadership, innovation, and impactful community projects — 
+building a better tomorrow for Coimbatore and beyond.

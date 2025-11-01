@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://rotaract-cbe-cosmopolitan.vercel.app/sitemap.xml
-Host: https://rotaract-cbe-cosmopolitan.vercel.app
+Host: rotaract-cbe-cosmopolitan.vercel.app
