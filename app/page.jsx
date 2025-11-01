@@ -16,8 +16,8 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Rotaract Club of Coimbatore Cosmopolitan",
-  url: "https://rotaract-cbe-cosmopolitan.vercel.app",
-  logo: "https://rotaract-cbe-cosmopolitan.vercel.app/favicon.ico",
+  url: "https://www.rotaractcbecosmopolitan.in",
+  logo: "https://www.rotaractcbecosmopolitan.in/favicon.ico",
   sameAs: [
     "https://www.instagram.com/rac_cbe_cosmopolitan/",
     "https://www.linkedin.com/company/rotaract-club-of-coimbatore-cosmopolitan/",

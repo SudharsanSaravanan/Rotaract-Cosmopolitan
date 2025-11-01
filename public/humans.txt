@@ -1,7 +1,7 @@
 /* TEAM */
 Developer: Sudharsana Saravanan S
 Role: Tech Lead
-Website: https://rotaract-cbe-cosmopolitan.vercel.app
+Website: https://www.rotaractcbecosmopolitan.in
 GitHub: https://github.com/SudharsanSaravanan
 LinkedIn: https://www.linkedin.com/in/sudharsana-saravanan-s-456544299/
 Location: Coimbatore, India
@@ -9,7 +9,7 @@ Location: Coimbatore, India
 /* ORGANIZATION */
 Organization: Rotaract Club of Coimbatore Cosmopolitan
 Affiliation: Rotary International
-Website: https://rotaract-cbe-cosmopolitan.vercel.app
+Website: https://www.rotaractcbecosmopolitan.in
 Established: August 10, 2014
 Focus: Youth Leadership, Community Service, Professional Development
 

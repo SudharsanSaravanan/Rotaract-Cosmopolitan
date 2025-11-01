@@ -9,10 +9,10 @@ export const metadata = {
     'Official website of the Rotaract Club of Coimbatore Cosmopolitan — empowering youth through service, leadership, and community initiatives.',
   keywords:
     'Rotaract Coimbatore, Rotaract Club, Rotary International, Coimbatore Cosmopolitan, youth leadership, community service, Rotaract CBE, Rotaract Cosmopolitan Coimbatore',
-  metadataBase: new URL('https://rotaract-cbe-cosmopolitan.vercel.app'),
+  metadataBase: new URL('https://www.rotaractcbecosmopolitan.in'),
 
   alternates: {
-    canonical: 'https://rotaract-cbe-cosmopolitan.vercel.app',
+    canonical: 'https://www.rotaractcbecosmopolitan.in',
   },
 
   robots: {
@@ -39,7 +39,7 @@ export const metadata = {
     title: 'Rotaract Club of Coimbatore Cosmopolitan',
     description:
       'Discover our initiatives, projects, and events at the Rotaract Club of Coimbatore Cosmopolitan.',
-    url: 'https://rotaract-cbe-cosmopolitan.vercel.app',
+    url: 'https://www.rotaractcbecosmopolitan.in',
     siteName: 'Rotaract Cosmopolitan',
     images: [
       {
@@ -62,7 +62,7 @@ export const metadata = {
   },
 
   other: {
-    humans: '/humans.txt', // for crawlers
+    humans: '/humans.txt',
   },
 }
 
@@ -71,8 +71,8 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Rotaract Club of Coimbatore Cosmopolitan",
-    url: "https://rotaract-cbe-cosmopolitan.vercel.app",
-    logo: "https://rotaract-cbe-cosmopolitan.vercel.app/favicon.ico",
+    url: "https://www.rotaractcbecosmopolitan.in",
+    logo: "https://www.rotaractcbecosmopolitan.in/favicon.ico",
     sameAs: [
       "https://www.instagram.com/rac_cbe_cosmopolitan/",
       "https://www.linkedin.com/company/rotaract-club-of-coimbatore-cosmopolitan/",
@@ -85,6 +85,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* ✅ Google Site Verification */}
+        <meta
+          name="google-site-verification"
+          content="ORJp0cjDc2NeVI4gEETkwtzGDafh2N6dYaxHkgwTkfE"
+        />
+
         {/* ✅ JSON-LD Organization Schema */}
         <script
           type="application/ld+json"
